@@ -1,0 +1,28 @@
+html,body{
+    /* background-color: rgb(245, 235, 235); */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* margin: 20px; */
+ }
+ 
+ body, input, textarea, select, button, table{
+     font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+ }
+ 
+ /* 
+ 네이버 이미지 크기를 아래처럼 잡고 감..!
+ background-size: 444px 434px;
+ */
+ 
+ .blind{
+     /* display: none;  화면 상에서 완전히 없애줌 공간도 없애줌  */
+     /* visibility: hidden; 
+    안보이게만 해줌. 공간은 존재함  */
+     position: absolute;
+     clip: rect(0 0 0 0);
+     width: 1px;
+     height: 1px;
+     margin: -1px;
+     overflow: hidden;
+ }

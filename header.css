@@ -1,0 +1,465 @@
+
+ 
+ /*  */
+ .header{
+     width: 1280px;
+     height: 268px;
+     /* background-color: aqua; */
+     margin: auto;
+ }
+ .header-alarm{
+     display: flex;
+     justify-content: space-between;
+     padding-top: 20px;
+ 
+     
+ }
+ .header-alarm a{
+     display: inline-block;
+     width: 46px;
+     height: 46px;
+     /* padding: 10px; */
+     position: relative;
+ 
+     
+ }
+ .header-alarm--left a{
+     position: relative;
+     left: -7px;
+ }
+ .header-alarm--left a:nth-child(1)::after{
+     display: block;
+     width: 26px;
+     height: 26px;
+     content: "";
+     background-size: 444px 434px;
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 130px 103px;
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ 
+ }
+ .header-alarm--left a:nth-child(2)::after{
+     display: block;
+     width: 32px;
+     height: 32px;
+     content: "";
+     background-size: 444px 434px;
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 149px -177px;
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ .header-alarm--right a:nth-child(1)::after{
+     display: block;
+     width: 26px;
+     height: 26px;
+     content: "";
+     background-size: 444px 434px;
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 80px -81px;
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ .header-alarm--right a:nth-child(2)::after{
+     display: block;
+     width: 26px;
+     height: 26px;
+     content: "";
+     background-size: 444px 434px;
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 80px -27px;
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ 
+ .header-alarm a:nth-child(1):hover::before,
+ a:nth-child(2):hover::before{
+     border: 1px solid f5f7f8;
+     background-color: f5f7f8;
+     border-radius: 50%;
+     content:"";
+     display: block;
+     width: 100%;
+     height: 100%;
+     
+ }
+ 
+ /* /////////////////////////////////////////////////////////// */
+ 
+ .header-inner{
+     height: 156px;
+     padding-bottom: 42px;
+     display: flex;
+     flex-direction: column;
+     /* background-color: #064422; */
+ }
+ 
+ .header-search{
+     position: relative;
+     /* background-color: red; */
+     /* height: 156px; */
+ 
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .header-search--inputBox{
+     width: 706px;
+     height: 58px;
+     border: 1px solid #03c75a;
+     border-radius: 33px;
+     display: flex;
+     justify-content: space-between;
+     margin: 0;
+     /* position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%); */
+ 
+     /* left: 50%;
+     transform: translateX(-50%);
+     중앙 배치 해주려고!  */
+ }
+ .header-search--inputBox:hover{
+     box-shadow: 1px 1px 5px lightgray;
+ }
+ .search_content{
+     height: 58px;
+     display: flex;
+ }
+ #header_search_input::placeholder{
+     color: transparent;
+ }
+ #header_search_input:focus::placeholder{
+     color: #e4e4e4;
+     font-weight: 100;
+ }
+ 
+ .header-search--inputBox .logo{
+     /* display: inline-block; */
+     width: 67px;
+     height: 100%;
+     position: relative;
+ 
+     /* padding: 17px 15px 17px 27px; */
+     /* background-color: rgb(116, 255, 139); */
+ }
+ 
+ .logo::before{
+     display: block;
+     width: 24px;
+     height: 24px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 52px 0px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translateY(-50%);
+     
+ }
+ 
+ .header-search--inputBox input{
+     /* display: inline-block; */
+     width: 480px;
+     height: 100%;
+     border: 0px;
+     outline: none;
+     /* font-size: 2rem; */
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: bold;
+     padding: 17px 0px;
+     
+ }
+ 
+ .search_btn{
+     display: flex;
+     /* width: 100%;
+     height:100%; */
+ }
+ .search_btn button{
+     border: 0px ;
+     background-color: transparent;
+ }
+ .search_kbd_btn{
+     width: 30px;
+     position: relative;
+     cursor: pointer;
+ }
+ .search_kbd_btn::before{
+     display: block;
+     width: 24px;
+     height: 14px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: -153px -166px;   
+ }
+ .search_kbd_btn:hover::before{
+     background-position: -128px -166px;  
+ }
+ 
+ .kbd_text{
+     display: none;
+     width: 68px;
+     height: 37px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: -55px -127px;
+     position: absolute;
+     top: 40px;
+     left: -15px;
+     cursor: pointer;
+ }
+ 
+ 
+ .search_arrow_btn{
+     width: 22px;
+     padding: 12px;
+     cursor: pointer;
+ }
+ .search_arrow_btn::before{
+     display: block;
+     width: 10px;
+     height: 6px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: -102px -272px;   
+ }
+ .search_enter_btn{
+     width: 62px;
+     padding: 12px;
+     cursor: pointer;
+     
+ }
+ .search_enter_btn::before{
+     display: block;
+     width: 25px;
+     height: 25px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 81px -186px;  
+ }
+ 
+ 
+ 
+ .header-search--banner{
+     position: absolute;
+     
+     right: 0;
+    
+ }
+ 
+ .header-search--banner::after{
+     background-image: url(./img/가정의달.png);
+     width: 162px;
+     height: 40px;
+     content: "";
+     display: block;
+     background-size: 164px;
+ }
+ 
+ 
+ 
+ /* ////////////////////////// */
+ .header-menu{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center; 
+     
+     /* 
+     flex-direction: column;
+     justify-content: center; 
+     로 하면 안된다. 
+     
+     flex-direction가 row일때는 justify-content를,
+     flex-direction가 column일때는 align-items를 사용하쟈!!
+     걍 외워 머리에 때려넣어..!!!!!!!!!!
+     */
+     
+ 
+ }
+ .header-menu--list{
+     /* width: 676px; */
+     width: 708px;
+     height: 75px;
+ }
+ .header-menu--list ul{
+     display: flex;
+     flex-direction: row;
+     padding-left: 10px;
+     justify-content: center;
+ }
+ li{
+     list-style-type: none;
+ }
+ a{
+     text-decoration-line: none;
+ }
+ .header-menu--list ul li{
+     width: 64px;
+     height: 75px;
+ }
+ .header-menu--list ul li a{
+     width: 64px;
+     height: 75px;
+     display: flex;
+     flex-direction: column;
+     
+     /* background-color: red; */
+ }
+ .header-menu--list ul li a span:nth-child(1){
+     width: 54px;
+     height: 54px;
+     margin: auto;
+     /* background-color: aquamarine; */
+ }
+ .header-menu--list ul li a span:nth-child(2){
+     width: 64px;
+     height: 20px;
+     text-align: center;
+     /* background-color: rgb(193, 253, 185); */
+     color: black;
+     margin-top: 7px;
+ }
+ 
+ .list_메일_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 194px -89px; 
+     margin: auto;
+ }
+ .list_카페_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 194px 0px; 
+     margin: auto;
+ }
+ .list_블로그_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 243px -97px; 
+     margin: auto;
+ }
+ .list_쇼핑_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 355px -209px; 
+     margin: auto;
+ }
+ .list_뉴스_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 444px -209px; 
+     margin: auto;
+ }
+ .list_증권_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 264px -208px; 
+     margin: auto;
+ }
+ .list_부동산_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 399px -208px; 
+     margin: auto;
+ }
+ .list_지도_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 241px -2px; 
+     margin: auto;
+ }
+ .list_웹툰_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: 219px -208px; 
+     margin: auto;
+ }
+ .list_더보기_icon::before{
+     display: block;
+     width: 44px;
+     height: 44px;
+     background-size: 444px 434px;
+     content: "";
+     background-image: url(./img/sp_main.74b52318.png);
+     background-position: -249px -134px; 
+     margin: auto;
+     cursor: pointer;
+     
+ }
+ 
+ 
+ .list_icon_border::before{
+     width: 44px;
+     height: 44px;
+     border: 1.5px solid #efefef;
+     border-radius: 15px;
+ }
+ 
+ .header-menu--blind_list{
+     margin-top: 100px;
+ }
+ 
+/*  
+ 
+ #exxx{
+     /* height: 9999px;
+     background: rgb(49, 49, 49);
+ } */

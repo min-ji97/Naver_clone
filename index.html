@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVER</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* body{
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script defer src="index.js"></script>
+
+    <div>
+        <!-- 헤더 로고/검색창  -->
+        <div class="header">
+            <div class="header-alarm">
+                <div class="header-alarm--left">
+                    <a href=""><span class="blind">바로가기</span></a>
+                    <a href=""><span class="blind">네이버페이</span></a>
+                </div>
+                <div class="header-alarm--right">
+                    <a href=""><span class="blind">네이버톡</span></a>
+                    <a href=""><span class="blind">알림및혜택</span></a>
+                </div>
+            </div>
+            
+            <div class="header-inner">
+
+                <div class="header-search">
+                    <form action="#" class="header-search--inputBox">
+
+                        <div class="search_content">
+                            <a href="#" class="logo"><span class="blind">네이버</span></a>
+                            <label class="blind" for="header_search_input">검색창</label>
+                            <input id="header_search_input" type="text" placeholder="검색어를 입력해 주세요." />
+                        </div>
+                        <div class="search_btn">
+                            <button class="search_kbd_btn">
+                                <span class="kbd_text"><span class="blind">입력도구</span></span>
+                            </button>
+                            <button class="search_arrow_btn"></button>
+                            <button class="search_enter_btn"></button>
+                        </div>
+                    </form>
+                    <div class="header-search--banner">
+                        <a href=""></a>
+                    </div>
+                </div>
+
+                <div class="header-menu">
+                    <div class="header-menu--list">
+                        <ul>
+                            <li class="menu-list_메일">
+                                <a href="">
+                                    <span class="list_icon_border list_메일_icon"></span>
+                                    <span>메일</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_카페">
+                                <a href="">
+                                    <span class="list_icon_border list_카페_icon"></span>
+                                    <span>카페</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_블로그">
+                                <a href="">
+                                    <span class="list_icon_border list_블로그_icon"></span>
+                                    <span>블로그</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_쇼핑">
+                                <a href="">
+                                    <span class="list_icon_border list_쇼핑_icon"></span>
+                                    <span>쇼핑</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_뉴스">
+                                <a href="">
+                                    <span class="list_icon_border list_뉴스_icon"></span>
+                                    <span>뉴스</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_증권">
+                                <a href="">
+                                    <span class="list_icon_border list_증권_icon"></span>
+                                    <span>증권</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_부동산">
+                                <a href="">
+                                    <span class="list_icon_border list_부동산_icon"></span>
+                                    <span>부동산</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_지도">
+                                <a href="">
+                                    <span class="list_icon_border list_지도_icon"></span>
+                                    <span>지도</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_웹툰">
+                                <a href="">
+                                    <span class="list_icon_border list_웹툰_icon"></span>
+                                    <span>웹툰</span>
+                                </a>
+                            </li>
+                            <li class="menu-list_바로가기펼침">
+                                <span class="list_icon_border list_더보기_icon"></span>
+                                <!-- <span >바로가기 펼침</span>-->
+                        </ul>
+                    </div>
+                    <!-- <div class="header-menu--blind_list">
+                        <a href=""><span>전체서비스</span></a>
+                        <ul class="blind_service">
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_날씨"></span>
+                                    <span>날씨</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_네이버게임"></span>
+                                    <span>네이버게임</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_네이버페이"></span>
+                                    <span>네이버페이</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_네이버TV"></span>
+                                    <span>네이버TV</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_도서"></span>
+                                    <span>도서</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_밴드"></span>
+                                    <span>밴드</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_사전"></span>
+                                    <span>사전</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_쇼핑라이브"></span>
+                                    <span>쇼핑라이브</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_스포츠"></span>
+                                    <span>스포츠</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_시리즈"></span>
+                                    <span>시리즈</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_웹소설"></span>
+                                    <span>웹소설</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_지식IN"></span>
+                                    <span>지식IN</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_캘린더"></span>
+                                    <span>캘린더</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_해피빈"></span>
+                                    <span>해피빈</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_MYBOX"></span>
+                                    <span>MYBOX</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="blind_service_icon_VIBE"></span>
+                                    <span>VIBE</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+
+                    </div> -->
+                </div> 
+            </div>
+        </div>
+        <!-- 메인 -->
+        <div id="main">
+            <div id="main-left">
+                <div id="main-left--ad"></div>
+                <div id="main-left--newstand"></div>
+                <div id="main-left--shopping"></div>
+                <div id="main-left--recommend"></div>
+            </div>
+
+            <div id="main-right">
+                <div id="main-right--login"></div>
+                <div id="main-right--ad"></div>
+                <div id="main-right--weather"></div>
+                <div id="main-right--stock"></div>
+                <div id="main-right--ad-first-banner"></div>
+                <div id="main-right--widget"></div>
+                <div id="main-right--ad-second-banner"></div>
+                
+            </div>
+        </div>
+
+        <footer>
+            
+        </footer>
+    </div>
+
+
+</body>
+</html> 

@@ -1,0 +1,106 @@
+
+#main{
+    width: 1280px;
+    height: 2296px;
+    margin: auto;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*-----------------main-left-------------------------  */
+#main-left{
+    display: flex;
+    flex-direction: column;
+    width: 830px;
+    /* background-color: aqua; */
+}
+
+/* main-left--ad */
+
+
+#main-left div,
+#main-right div{
+    border: 1px solid #e3e5e8;
+    background-color: #e3e5e8 ;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+
+#main-left--ad{
+    /* width: 100%; */
+    height: 130px;
+}
+
+/* main-left--newstand */
+#main-left--newstand{
+    height: 426px;
+}
+
+/* main-left--shopping */
+#main-left--shopping{
+    height: 560px;
+}
+
+/* main-left--recommend */
+#main-left--recommend{
+    height: 1132px;
+}
+
+
+
+/*---------------------main-right---------------------------*/
+
+#main-right{
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    /* background-color: brown; */
+}
+
+/* main-right--login */
+#main-right--login{
+    height: 164px;
+}
+
+/* main-right--ad */
+#main-right--ad{
+    height: 240px;
+}
+
+/* main-right--weather */
+#main-right--weather{
+    height: 236px;
+}
+
+/* main-right--stock */
+#main-right--stock{
+    height: 236px;
+}
+/* main-right--ad-first-banner */
+#main-right--ad-first-banner{
+    height: 80px;
+}
+
+/* main-right--widget */
+#main-right--widget{
+    height: 806px;
+}
+
+#main-right--ad-second-banner{
+    height: 80px;
+}
+
+
+
+
+
+
+
+footer{
+    /* width: 1653px; */
+    height: 431px;
+    background-color: #f5f6f7;
+}
