@@ -86,7 +86,7 @@
  }
  
  .header-alarm a:nth-child(1):hover::before,
- a:nth-child(2):hover::before{
+ .header-alarm a:nth-child(2):hover::before{
      border: 1px solid f5f7f8;
      background-color: f5f7f8;
      border-radius: 50%;

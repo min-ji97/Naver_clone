@@ -1,4 +1,19 @@
 
+
+.font--weight--bold{
+    font-weight: bold;
+    color: black !important;
+}
+a{
+    text-align: none;
+    color: black;
+}
+.a--text--underline a:hover{
+    text-decoration-line: underline;
+}
+
+
+/*  */
 #main{
     width: 1280px;
     height: 2296px;
@@ -17,41 +32,394 @@
     /* background-color: aqua; */
 }
 
-/* main-left--ad */
 
 
-#main-left div,
+
+
+/* #main-left div, */
+#main-left section,
 #main-right div{
     border: 1px solid #e3e5e8;
-    background-color: #e3e5e8 ;
+    /* background-color: #e3e5e8 ; */
     border-radius: 8px;
+   
+}   
+#main-left section,
+#main-right div{
     margin-top: 16px;
 }
-
+/* main-left--ad */
 
 #main-left--ad{
     /* width: 100%; */
     height: 130px;
+    border: 1px solid #e3e5e8;
+    /* background-color: #e3e5e8 ; */
+    border-radius: 8px;
 }
 
 /* main-left--newstand */
 #main-left--newstand{
-    height: 426px;
+    /* height: 458px; */
+    height: 426px; 
 }
 
-/* main-left--shopping */
+.section--title{
+    padding: 18px 20px 17px;
+    font-size: 16px;
+}
+.section--title a{
+    color: #838383;
+}
+/* .section--title a:nth-child(1){
+    color: black;
+} */
+
+
+/* .section--title a:hover,
+.section--subCtn a:hover{
+    text-decoration-line: underline;
+} 
+ a--text--underline a:hover로 빼둠!   
+
+*/
+
+#main-left--newstand .section--title a:nth-child(2){
+    margin-left: 14px;
+}
+/* .section--title a:nth-child(2)::before{
+    content:'';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #d3d5d7;
+    top: 8px;
+    left: -11px;
+    position: absolute;
+} */
+ .dot{
+    position: relative;
+ }
+.dot::before{
+    content:'';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #d3d5d7;
+    top: 8px;
+    left: -11px;
+    position: absolute;
+}
+
+.slash::before{
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #d3d5d7;
+    top: 3px;
+    left: 11px;
+    position: absolute;
+    transform: rotate(15deg);
+}
+
+.slash{
+    padding-left: 26px;
+    position: relative;
+}
+/* 
+   slash 와 dot으로 정리했
+.section--title a:nth-child(3),
+.section--title a:nth-child(4),
+.section--title a:nth-child(5),
+.section--title a:nth-child(6){
+    padding-left: 26px;
+    position: relative;
+} */
+/* .section--title a:nth-child(3)::before,
+.section--title a:nth-child(4)::before,
+.section--title a:nth-child(5)::before,
+.section--title a:nth-child(6)::before{
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #d3d5d7;
+    top: 3px;
+    left: 11px;
+    position: absolute;
+    transform: rotate(15deg);
+} */
+
+
+
+
+
+.section--subCtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #08080880;
+    padding: 12px 20px;
+    margin: 0px 20px;
+    background-color: #f5f7f8;
+    border-radius: 4px;
+    line-height: 26px;
+    font-size: 14px;
+}
+
+
+.section--subCtn--left a:nth-child(1)::after{
+    content:'';
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 451px 441px;
+    background-position: -125px -277px;
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 6px;
+    display: inline-block;
+    margin: 10px 0 0 5px;
+}
+.section--subCtn--left a:nth-child(2){
+    position: relative;
+    padding-left:25px ;
+}
+.section--subCtn--left a:nth-child(2)::before{
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #d3d5d7;
+    top: 3px;
+    left: 11px;
+    position: absolute;
+    /* transform: rotate(15deg); */
+
+}
+
+.section--subCtn--left a:nth-child(3){
+    position: relative;
+    padding-left: 8px;
+    text-overflow: ellipsis;
+}
+.section--subCtn--left a:nth-child(3)::before{
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #d3d5d7;
+    top: 8px;
+    left: 0px;
+    position: absolute;
+}
+.section--subCtn--right a:nth-child(2){
+    position: relative;
+    padding-left: 25px;
+}
+.section--subCtn--right a:nth-child(2)::before{
+    content: '';
+    width: 1px;
+    height: 12px;
+    /* border-radius: 50%; */
+    background-color: #d3d5d7;
+    top: 3px;
+    left: 9px;
+    position: absolute;
+}
+
+#main-left--newstand .section--content{
+    display: grid;
+    grid-template-columns: repeat( 6 , 1fr);
+    grid-gap: 1px;
+    border: 1px solid #ebebeb;
+    background-color: #ebebeb;
+    width: 790px;
+    height: 231px;
+    margin: 18px 20px;
+    text-align: center;
+    align-items: center;
+}
+#main-left--newstand .section--content div{
+    padding: 18px 0px;
+    background-color: white;
+    font-size: 16px; 
+}
+
+.section--footer{
+    height: 30px;
+    border-top: 1px solid #ebebeb ;
+    padding: 9px 0px 11px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.section--footer div:nth-of-type(1){
+    display: flex;
+    flex-direction: row;
+}   
+.section--footer div:nth-of-type(1) div{
+    padding: 0px 16px;
+    display: flex;
+}
+
+.section--footer div:nth-of-type(1) div span{
+    font-size: 13px;
+    line-height: 33px;
+}
+.section--footer div:nth-of-type(1) div span:nth-child(4){
+    color: #60606080;
+}
+.section--footer div:nth-of-type(1) div span:nth-child(2),
+.section--footer div:nth-of-type(1) div span:nth-child(3){
+    color: #606060;
+
+}
+
+.section--footer div:nth-of-type(1) div span:nth-child(1){
+    color: #3a67ea;
+    font-weight: bold;
+}
+.section--footer div:nth-of-type(1) div span:nth-child(2),
+.section--footer div:nth-of-type(1) div span:nth-child(3){
+    font-weight: bold;
+}
+
+.section--pre--btn,
+.section--next--btn{
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ebebeb ;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.section--pre--btn::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid #4e5155;
+    border-left:  2px solid #4e5155;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 13px;
+    left: 15px;
+}
+.section--next--btn::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid #4e5155;
+    border-right:  2px solid #4e5155;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 13px;
+    left: 13px;
+}
+        /* ------- */
+
+.btn-view-list, .btn-view-thumb{
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    top: 0px;
+}
+.btn-view-list{
+    right: 49px;
+    padding: 18px 9px 18px 20px;
+}
+
+.btn-view-thumb{
+    right: 0px;
+    padding: 18px 20px 18px 9px;
+}
+
+.btn-view-list::before, .btn-view-thumb::before{
+    content: '';
+    display: inline-block;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 451px 441px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px
+}
+.btn-view-list::before{
+    background-position: -399px -207px;
+}
+.btn-view-thumb::before{
+    background-position: -201px -304px;
+}
+.btn-view-list:hover::before{
+    background-position: -399px -186px;
+}
+
+.btn-view-thumb:hover::before{
+    background-position: -180px  -304px;
+}
+
+/* ---------main-left--shopping------ */
 #main-left--shopping{
     height: 560px;
 }
 
-/* main-left--recommend */
+#main-left--shopping div span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #606060;
+}
+#main-left--shopping div span:nth-child(2){
+    color: #71717199;
+}
+
+#main-left--shopping .section--title{
+    position: relative;
+}
+
+.shopping--right--btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.shopping--right--btn .section--pre--btn,
+.shopping--right--btn .section--next--btn{
+    width: 30px;
+    height: 30px;
+
+}
+.shopping--right--btn .section--pre--btn{
+   
+}
+.shopping--right--btn .section--next--btn{
+
+}
+
+
+/* ---------------- main-left--recommend ------------------ */
 #main-left--recommend{
     height: 1132px;
 }
 
 
 
-/*---------------------main-right---------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------main-right----------------------------------------*/
 
 #main-right{
     display: flex;
