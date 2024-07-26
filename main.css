@@ -662,16 +662,189 @@ div:not(.not-list)[class*='shopping1--item'] span:nth-of-type(2){
     height: 1132px;
 }
 
+#main-left--recommend .section--title {
+    display: flex;
+    flex-direction: row;
+}
+#main-left--recommend .section--title strong{
+    color: black;
+}
+/*  */
+#main-left--recommend .section--subCtn{
+    margin: 0px 20px 18px;
+    height: 50px;
+    align-items: center;
+    padding: 0px 20px 0px 10px;
+}
+#main-left--recommend .recommend-section--subCtn--left{
+    display: flex;
+    flex-direction: row;
+    
+}
+#main-left--recommend .recommend-section--subCtn--left a{
+    font-size: 14px;
+    padding: 0px 12px;
+    border: 1px solid #ebebeb;
+    background-color: white;
+    color: #404040;
+    margin: 0px 2px;
+    border-radius: 18px;
+    line-height: 34px;
+    height: 34px;
+    
+}
+#main-left--recommend .recommend-section--subCtn--left a:nth-of-type(1){
+    background-color: #5290ff;
+    border-color: rgba(0,0,0,.04);
+    color: white;
+    font-weight: bold;
+}
 
+/* --- grid-----*/
 
+#main-left--recommend .section--content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:  repeat(3, 1fr);
+    margin-right: 20px;
+}
 
+#main-left--recommend .section--content a{
+    height: 194px;
+    padding: 0px 0px 20px 20px; /* gap을 20주고 이건 지워줘도 되지 않을까..!*/
+    display: flex;
+    flex-direction: column;
+}
 
+#main-left--recommend .section--content a > span{
+    margin-top: 10px;
+    font-size: 14px;
+}
+#main-left--recommend .section--content a:hover span{
+    text-decoration: underline;
+    
+    
+}
+#main-left--recommend .section--content a img{
+    border-radius: 1px solid black;
+    width: 100%;
+    height: 120px;
+}
 
+    /* 채널 이름 */
+#main-left--recommend .section--content div{
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+    
+}
 
+#main-left--recommend .section--content div span:nth-child(1){
+    width: 20px;
+    height: 20px;
+    background-color: #9858f5;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+#main-left--recommend .section--content div span:nth-child(2){
+    text-decoration: none;
+}
 
+/* feed box */
+.feed--box{
+    height: 274px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+.feed--box strong{
+    /* height: 60px; */
+    border-top: 1px solid #ebebeb;
+    padding: 23px 0px 15px;
+    justify-content: start;
+}
+.feed--box div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.feed--box div a{
+    width: 108px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+}
+.feed--box div img{
+    width: 100%;
+    height: 156px;
+    border: 1px solid 567-black;
+}
+.feed--box div a > span:nth-of-type(1){
+    height: 41px;
+    /* display: inline; */
+    
+    margin-top: 10px;
+    width: 108px;
+    /*  2줄 span 말 줄임..! */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp : 2;
+}
 
+.feed--box div a:hover span:nth-of-type(1){
+    text-decoration: underline;
+}
 
+.feed--box div a > span:nth-of-type(2){
+    text-decoration: none;
+    height: 20px;
+    margin-top: 4px;
+}
 
+.feed--box{
+    margin-bottom: 23px;
+}
+
+#main-left--recommend .section--footer{
+    height: 56px;
+    padding: 0;
+  
+}
+
+#main-left--recommend .section--footer div{
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+    color: #404040;
+    position: relative;
+}
+.flus-icon{
+  
+}
+.flus-icon::before, .flus-icon::after{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    border: 1px solid #5a6dfe ;
+    background-color: #5a6dfe;
+    width: 10px;
+
+    top: 28px;
+    left: 6px;
+    /* height: 1px; */
+}
+.flus-icon::before{
+    /* top: 27px;
+    left: 6px; */
+}  
+.flus-icon::after{
+    transform: rotate(90deg);
+   
+}
 
 
 
