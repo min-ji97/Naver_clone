@@ -64,20 +64,19 @@ a{
 /* main-left--ad */
 
 #main-left--ad{
-    /* width: 100%; */
+    width: 100%;
     height: 130px;
-    border: 1px solid #e3e5e8;
-    /* background-color: #e3e5e8 ; */
     border-radius: 8px;
     overflow: hidden;
 }
 
 #main-left--ad img{
-    border: 1px solid #e3e5e8;
+    /* border: 1px solid #e3e5e8; */
     border-radius: 8px;
     height: 130px;
     cursor: pointer;
 }
+
 /* main-left--newstand */
 #main-left--newstand{
     /* height: 458px; */
@@ -169,10 +168,6 @@ a{
     transform: rotate(15deg);
 } */
 
-
-
-
-
 .section--subCtn{
     display: flex;
     flex-direction: row;
@@ -243,7 +238,7 @@ a{
     left: 9px;
     position: absolute;
 }
-
+/* 언론사 grid */
 #main-left--newstand .section--content{
     display: grid;
     grid-template-columns: repeat( 6 , 1fr);
@@ -256,11 +251,67 @@ a{
     text-align: center;
     align-items: center;
 }
-#main-left--newstand .section--content div{
+#main-left--newstand .section--content > div{
     padding: 18px 0px;
     background-color: white;
-    font-size: 16px; 
+    /* font-size: 16px;  */
+    position: relative;
 }
+
+/* #main-left--newstand .section--content > div:hover::after{
+    content: '구독 기사보기';
+    display: inline;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #2868f2;
+    color: white;
+    text-align: center;
+} */
+
+
+
+.news--follow{
+    display: none;
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #2868f2;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    
+
+}
+.news--follow a{
+    color: white;
+    font-size: 13px;
+}
+.news--follow a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.news--follow .slash{
+    padding-left: 16px;
+}
+.news--follow .slash::before{
+    transform: rotate(0deg);
+    height: 12px;
+    background-color: #6996f6;
+    top: 3px;
+    left: 9px;
+}
+
+
+#main-left--newstand .section--content > div:hover .news--follow{
+    display: block;
+ }
 
 .section--footer{
     height: 30px;
@@ -930,22 +981,20 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
 .feed--box div img{
     width: 100%;
     height: 156px;
-    border: 1px solid 567-black;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 .feed--box div a > span:nth-of-type(1){
     height: 41px;
-    /* display: inline; */
-    
+    font-size: 14px;
+    font-weight: 500;
+    color: #101010;
     margin-top: 10px;
     width: 108px;
-    /*  2줄 span 말 줄임..! */
-    /* text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp : 2; */
 }
 
+
+/*  말 줄이기  */
 .span---ellipsis{
     text-overflow: ellipsis;
     overflow: hidden;
@@ -953,8 +1002,6 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
     -webkit-box-orient: vertical;
     -webkit-line-clamp : 2;
 }
-
-
 
 
 
@@ -966,6 +1013,8 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
     text-decoration: none;
     height: 20px;
     margin-top: 4px;
+    font-size: 13px;
+    color: #606060;
 }
 
 .feed--box{
@@ -975,6 +1024,7 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
 #main-left--recommend .section--footer{
     height: 56px;
     padding: 0;
+    cursor: pointer;
   
 }
 
