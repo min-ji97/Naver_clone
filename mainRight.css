@@ -1,0 +1,138 @@
+#main-right{
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    /* background-color: brown; */
+}
+
+/* main-right--login */
+#main-right--login{
+    height: 125px;
+    padding: 21px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#main-right--login > span:first-child{
+    font-size: 14px;
+    color: #101010;
+    text-align: center;
+}
+
+/* hover시 #17b75e */
+#main-right--login > a {
+    border: 1px solid #03c75a ;
+    background-color: #03c75a;
+    border-radius: 4px;
+    height: 20px;
+    padding: 17px 0px;
+    margin-top: 13px;
+    box-shadow: 1 1 1 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+
+}
+#main-right--login > a > span:first-child{
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    width: 73px;
+    height: 16px;
+    display: inline-block;
+    background-position: -55px -162px;
+    margin: 3px 8px 0px 0px;
+} 
+#main-right--login > div{
+    margin-top: 16px;
+    text-align: center;
+}
+#main-right--login > div a{
+    font-size: 13px;
+    color: #606060;
+}
+#main-right--login > div a:hover{
+    text-decoration: underline;
+}
+#main-right--login .slash{
+    padding-left: 12px;
+}
+#main-right--login .slash::before{
+    transform: rotate(0deg);
+    height: 12px;
+    left: 3px;
+}
+
+
+/* main-right--ad */
+#main-right--ad{
+    height: 240px;
+    overflow: hidden;
+}
+#main-right--ad img{
+    height: 240px;
+    border-radius: 4px;
+}
+
+
+/* main-right--weather */
+#main-right--weather{
+    height: 236px;
+}
+
+/* main-right--stock */
+#main-right--stock{
+    height: 236px;
+}
+/* main-right--ad-first-banner */
+#main-right--ad-first-banner{
+    height: 80px;
+    overflow: hidden;
+}
+#main-right--ad-first-banner img{
+    width: 420px;
+    height: 80px;
+    border-radius: 4px;
+}
+
+/* main-right--widget */
+#main-right--widget{
+    height: 806px;
+}
+
+#main-right--ad-second-banner{
+    height: 64px;
+    padding: 8px 50px 8px 18px;
+}
+#main-right--ad-second-banner > div{
+    padding: 11px 0px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.banner--whale--logo{
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    width: 42px;
+    height: 36px;
+    display: inline-block;
+    background-position:-201px -140px;
+    margin: 3px 8px 0px 0px;
+    margin-right: 12px;
+}
+.banner--whale--text{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+.banner--whale--text strong{
+    color: #101010;
+}   
+.banner--whale--text span{
+    color: #606060;
+    margin-top: 2px;
+}
+#main-right--ad-second-banner > div:hover .banner--whale--text{
+    text-decoration: underline;
+}

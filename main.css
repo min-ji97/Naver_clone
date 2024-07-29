@@ -14,7 +14,14 @@ a{
 
 
 
-
+/*  말 줄이기  */
+.span---ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp : 2;
+}
 
 
 
@@ -51,14 +58,15 @@ a{
 
 /* #main-left div, */
 #main-left section,
-#main-right div{
+#main-right section {
     border: 1px solid #e3e5e8;
     /* background-color: #e3e5e8 ; */
     border-radius: 8px;
    
-}   
+}
+
 #main-left section,
-#main-right div{
+#main-right section:not(#main-right--login){
     margin-top: 16px;
 }
 /* main-left--ad */
@@ -989,14 +997,6 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
 }
 
 
-/*  말 줄이기  */
-.span---ellipsis{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp : 2;
-}
 
 
 
@@ -1020,7 +1020,6 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
     height: 56px;
     padding: 0;
     cursor: pointer;
-  
 }
 
 #main-left--recommend .section--footer div{
@@ -1030,9 +1029,7 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
     color: #404040;
     position: relative;
 }
-.flus-icon{
-  
-}
+
 .flus-icon::before, .flus-icon::after{
     position: absolute;
     content: '';
@@ -1043,67 +1040,15 @@ div:not(.not-list)[class*='shopping--item'] span:nth-of-type(2){
 
     top: 28px;
     left: 6px;
-    /* height: 1px; */
 }
-.flus-icon::before{
-    /* top: 27px;
-    left: 6px; */
-}  
+
 .flus-icon::after{
     transform: rotate(90deg);
    
 }
 
 
-
-
-
-
-
-
-
-
 /*-----------------------------------------main-right----------------------------------------*/
-
-#main-right{
-    display: flex;
-    flex-direction: column;
-    width: 420px;
-    /* background-color: brown; */
-}
-
-/* main-right--login */
-#main-right--login{
-    height: 164px;
-}
-
-/* main-right--ad */
-#main-right--ad{
-    height: 240px;
-}
-
-/* main-right--weather */
-#main-right--weather{
-    height: 236px;
-}
-
-/* main-right--stock */
-#main-right--stock{
-    height: 236px;
-}
-/* main-right--ad-first-banner */
-#main-right--ad-first-banner{
-    height: 80px;
-}
-
-/* main-right--widget */
-#main-right--widget{
-    height: 806px;
-}
-
-#main-right--ad-second-banner{
-    height: 80px;
-}
 
 
 
