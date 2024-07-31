@@ -76,15 +76,209 @@
 }
 
 
-/* main-right--weather */
-#main-right--weather{
+
+
+/* 데일리 보드 ( 날씨 증시 ) */
+.daily--board{
+    padding: 0px 18px;
+}
+.daily--board > div:first-child{
+    padding: 6px 0px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+}
+.daily--board > div:first-child a:first-child{
+    font-size: 15px;
+    color: #080808;
+    padding-right: 7px;
+    font-weight: bold;
+}
+.daily--board > div:first-child a:first-child:hover{
+    text-decoration: underline;
+}
+
+
+#main-right--weather,#main-right--stock{
     height: 236px;
 }
 
+.daily--container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/* main-right--weather */
+#main-right--weather{
+
+}
+#main-right--weather div:first-child a:nth-of-type(2){
+    border: 1px solid #ebebeb;
+    border-radius: 45px;
+    font-size: 11px;
+    padding: 0px 10px 0px 7px;
+    color: #606060;
+    height: 26px;
+}
+#main-right--weather div:first-child a:nth-of-type(2)::before{
+    content: "";
+    display: inline-block;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    background-position: -431px -114px;
+    width: 12px;
+    height: 13px;
+    margin: 7px 5px 0 0;
+}
+#main-right--weather div:first-child a:nth-of-type(2):hover::before{
+    
+    background-position: -431px -101px;
+    
+}
+#main-right--weather div:first-child a:nth-of-type(2):hover{
+    background-color: #f8f8f8;
+    color: #404040;
+}
+.daily--board > div:first-child > span{
+    font-size: 13px;
+    color: #606060;
+    margin-left: 173px;
+}
+
+.weather--daily--left{
+    padding: 20px 0px 18px;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 145px;
+    box-sizing: border-box;
+}
+
+
+.today--weather--logo{
+    width: 86px;
+    height: 86px;
+    margin-right: 4px;
+}
+.today--weather--temper > span:first-child{
+    font-size: 39px;
+}
+.today--weather--temper > span:last-child{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.weather--temper, 
+.weather--미세{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weather--temper{
+    font-size: 14px;
+    margin-top: 20px;
+}
+.weather--temper > span:first-child{
+    
+}
+.weather--temper > span:last-child{
+    
+}
+
+.color--blue{
+    color: #3172e7;
+}
+.color--red{
+    color: #cd3534;
+}
+.weather--temper .slash{
+    padding-left: 8px;
+}
+.weather--temper .slash::before{
+    left: 2px;
+}
+
+
+.weather--detail--box{
+    display: flex;
+    flex-direction: row;
+}
+.today--weather--temper{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.weather--미세{
+    font-size: 13px;
+    width: 180px;
+    height: 20px;
+    margin-top: 6px ;
+}
+.weather--미세 span{
+    padding-left: 4px;
+}
+.weather--미세 .dot{
+    padding-left: 12px;
+   
+}
+.weather--미세 .dot::before{
+   left: 4px;
+   width: 3px;
+   height: 3px;
+}
+
+
 /* main-right--stock */
 #main-right--stock{
-    height: 236px;
+  
 }
+
+#main-right--stock div:first-child span{
+    margin-left: 237px;
+}
+
+#main-right--stock div:first-child span::before{
+    position: relative;
+    content: "";
+    display: inline-block;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 439px 421px;
+    background-position: -340px 49px;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    right: -90px;
+}
+
+#main-right--stock div:first-child span:hover::before{
+    background-position: -224px 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* main-right--ad-first-banner */
 #main-right--ad-first-banner{
     height: 80px;
@@ -98,9 +292,246 @@
 
 /* main-right--widget */
 #main-right--widget{
-    height: 806px;
+    height: 516px;
+    background-color: #f4f6fa;
+}
+.widget--title{
+    padding: 15px 17px 11px 19px;
+    color: #080808;
+    font-size: 15px;
+    font-weight: bold;
+}
+.widget--board--container{
+    width: 384px;
+    height: 396px;
+    padding: 3px 18px;
 }
 
+.widget--calendar, .widget--vibe{
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #ffffff, 0 1px 2px 0 rgba(0, 0, 0, .04);
+    background-color: white;
+}
+
+.widget--calendar{
+    width: 355px;
+    height: 176px;
+    padding: 8px 11px 8px 18px;
+    display: flex;
+    flex-direction: column; 
+}
+.widget--calendar--flex{
+    display: flex;
+    flex-direction: row; 
+}
+.widget--calendar--left{
+    display: flex;
+    flex-direction: column;
+    width: 177px;
+    height: 134px;
+    margin-top: 4px;
+    justify-content: space-between;
+}
+.widget--calendar > span{
+    font-size: 15px;
+    color: #080808;
+    font-weight: bold;
+}
+.calendar--today{
+    display: flex;
+    font-size: 39px;
+    /* font-weight: bold; */
+    color: #101010;
+}
+.calendar--today span:last-child{
+    margin: 23px 0 0 9px;
+    font-size: 13px;
+    font-weight: 100;
+}
+.widget--calendar--left > a{
+    font-size: 14px;
+    color: #606060;
+    text-decoration: underline;
+}
+
+
+
+
+/* 위젯 바이브  */
+
+.widget--vibe{
+    width: 384px;
+    height: 192px;
+    margin-top: 12px;
+    padding: 14px 18px 0px 14px;
+    box-sizing: border-box;
+}
+.vibe--top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.vibe--title > span{
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    width: 64px;
+    height: 16px;
+    background-position: -73px -275px;
+    display: inline-block;
+    padding: 0px 2px -2px 0;
+}
+.vibe--title strong{
+    font-size: 15px;
+    color: #080808;
+}
+.vibe--recomend{
+    font-size: 13px;
+    color: #606060;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.vibe--recomend::after{
+    position: absolute;
+    top: 1px;
+    right: -19px;
+    content: '';
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    background-position: -35px 28px;
+    width: 16px;
+    height: 16px;
+}
+.vibe--recomend:hover::after{
+    background-position: -18px 28px;
+}
+.vibe--main{
+    display: flex;
+    flex-direction: row;
+    padding: 12px 18px 0px;
+    position: relative;
+}
+.vibe--main div{
+    width: 108px;
+    height: 126px;
+    /* border: 1px solid black; */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 3;
+}
+.vibe--main > div:nth-of-type(2),
+.vibe--main > div:nth-of-type(3){
+    margin-left: 12px;
+}
+.vibe--main > div:nth-of-type(3){
+    border-right: 1px solid white;
+}
+.vibe--main img{
+    width: 108px;
+    height: 126px;
+}
+.vibe--main span{
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.vibe--main div::before{
+    content: '';
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(0, 0, 0, .04);
+    background-color: #4a443bbd;
+    border-radius: 50%;
+    z-index: 3;
+    
+}
+.vibe--main div::after{
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 17px;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    background-position: -123px 29px;
+    width: 10px;
+    height: 11px;
+    z-index: 4;
+}
+
+.vibe--main i::before{
+    content: '';
+    width: 4px;
+    height: 118px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 3px;
+    background-color: #7a7b7c;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    border: 1px solid white;
+}
+.vibe--main i::after{
+    content: '';
+    width: 4px;
+    height: 110px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 3px;
+    background-color: #d0d2d3;
+    top: 17px;
+    right: 10px;
+    z-index: 1;
+    border: 1px solid white;
+}
+
+
+.naver--mobile--load{
+    padding: 20px 23px 23px 22px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.naver--mobile--load > a:first-child{
+    display: inline-block;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    background-position: 53px -71px ;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
+.naver--mobile--load:hover a:nth-of-type(2){
+    text-decoration: underline;
+
+}
+.naver--mobile--load > a:nth-of-type(2){
+    font-size: 14px;
+    color: #101010;
+    line-height: 23px;
+}
+
+
+.naver--mobile--load > a:last-child{
+    display: inline-block;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    background-position: -7px 13px;
+    width: 10px;
+    height: 13px;
+    margin-left: 177px;
+}
+
+/*-------banner--------*/
 #main-right--ad-second-banner{
     height: 64px;
     padding: 8px 50px 8px 18px;

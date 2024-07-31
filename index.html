@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="mainRight.css">
+    <link rel="stylesheet" href="weatherImage.css">
     <style>
         /* body{
             background-color: red;
@@ -16,6 +17,7 @@
 <body>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="index.js"></script>
+    <script defer src="weather.js"></script>
 
     <div>
         <!-- 헤더 로고/검색창  -->
@@ -535,7 +537,7 @@
                     <div class="section--subCtn">
                         <strong>오늘의 혜택</strong>
                         <a href="" class="dot">
-                            <img src="img/f53ef733-6c08-41b1-82d5-16035c4032d7.png" alt="">
+                            <img class="no-scale" src="img/f53ef733-6c08-41b1-82d5-16035c4032d7.png" alt="">
                             <span class="today-pick">7/22~7/28</span> 7월 마지막 혜택데이! 패션/뷰티아이템 최대 91%↓ 
                         </a>
                     </div>
@@ -773,12 +775,163 @@
                 <section id="main-right--ad">
                     <img class="no-scale" src="img/main_right_banner_디즈니.png" alt="">
                 </section>
-                <section id="main-right--weather"></section>
-                <section id="main-right--stock"></section>
+
+                <!-- 오늘의 날씨 -->
+                <section id="main-right--weather" class="daily--board">
+                    <div>
+                        <a href="">날씨</a>
+                        <a href="">예보 비교</a>
+                        <span>경기도 이천시</span>
+                    </div>
+                    <div class="weather--daily--container daily--container">
+                        <div class="weather--daily--left">
+
+                            <div class="weather--detail--box">
+                                <div class="today--weather--logo">
+                                    
+                                </div>
+                                <div class="today--weather--temper">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="weather--temper">
+                                <span class="color--blue">25°</span>
+                                <span class="slash color--red">31°</span>
+                            </div>
+
+                            <div class="weather--미세">
+                                <span>미세</span>
+                                <span class="color--blue">좋음</span>
+                                <span class="dot">초미세</span>
+                                <span class="color--blue">좋음</span>
+                            </div>
+                        </div>
+                        <div class="weather--daily--right">
+                            <ul>
+                                <li class="next--weather">
+                                    <span></span>
+                                    <span>ㅣ</span>
+                                    <span><img src="" alt=""></span>
+                                    <span></span>
+                                </li>
+                                <li class="next--weather--2">
+                                    <span></span>
+                                    <span>ㅣ</span>
+                                    <span><img src="" alt=""></span>
+                                    <span></span>
+                                </li>
+                                <li class="next--weather--3">
+                                    <span></span>
+                                    <span></span>
+                                    <span><img src="" alt=""></span>
+                                    <span></span>
+                                </li>
+                                <li class="next--weather--4">
+                                    <span></span>
+                                    <span>ㅣ</span>
+                                    <span><img src="" alt=""></span>
+                                    <span></span>
+                                </li>
+                                <li class="next--weather--5">
+                                    <span></span>
+                                    <span>ㅣ</span>
+                                    <span><img src="" alt=""></span>
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- 오늘의 증시 -->
+                <section id="main-right--stock" class="daily--board">
+                    <div>
+                        <a href="">증시</a>
+                        <a href=""></a>
+                        <span>07.30. 03:58</span>
+                    </div>
+                    <div class="stock--daily--container daily--container">
+                        <div class="stock--daily--left"></div>
+                        <div class="stock--daily--right"></div>
+                    </div>
+
+                </section>
+
+
+
                 <section id="main-right--ad-first-banner">
                     <img class="no-scale" src="img/main_right_banner_오픈런.png" alt="">
                 </section>
-                <section id="main-right--widget"></section>
+                <section id="main-right--widget">
+                    <div class="widget--title">위젯 보드</div>
+
+                    <div class="widget--board--container">
+
+
+                        <div class="widget--calendar">
+                            <span>캘린더</span>
+                            <div class="widget--calendar--flex">
+                                <div class="widget--calendar--left">
+                               
+                                    <div class="calendar--today">
+                                        <span>7.30</span>
+                                        <span>화</span>
+                                    </div>
+                                    <a href="">로그인하기</a>
+                                </div>
+
+                                <div class="widget--calendar--right">
+                                    <table>
+    
+                                        달력이 들어올 부분입니당
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="widget--vibe">
+                            <div class="vibe--top">
+                               <div class="vibe--title">
+                                    <span></span>
+                                    <strong>휴식이 필요할때</strong>
+                                </div>
+                               <span class="vibe--recomend">다른 추천 보기</span>
+                            </div>
+                            <div class="vibe--main">
+                                <div>
+                                    <img src="img/vibe/조용한명상.jpg" alt="">
+                                    <span class="span---ellipsis">조용한 명상</span>
+                                </div>
+                                <div>
+                                    <img src="img/vibe/잠에취해.jpg" alt="">
+                                    <span class="span---ellipsis">잠에 취해</span>
+                                </div>
+                                
+                                <div>
+                                    <img src="img/vibe/깨지않는꿈.jpg" alt="">
+                                    <span class="span---ellipsis">깨지 않는 꿈</span>
+                                </div>
+                                <i></i>
+                                
+                            </div>
+                        </div>
+                    </div>
+                        
+
+
+
+                    <div class="naver--mobile--load">
+                        <a href=""></a>
+                        <a href="">
+                            <strong>모바일 네이버 메인</strong>
+                            <span>열기</span>
+                        </a>
+                        <a href=""></a>
+                    </div>
+                </section>
                 <section id="main-right--ad-second-banner">
                     <div>
                         <div class="banner--whale--logo"></div>
