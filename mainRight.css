@@ -164,6 +164,14 @@
     height: 86px;
     margin-right: 4px;
 }
+
+.weather--daily--right [class*='next--weather'] span:nth-child(3){
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+
 .today--weather--temper > span:first-child{
     font-size: 39px;
 }

@@ -1,9 +1,9 @@
 
-
-
+// require('dotenv').config();
+import config from './config.js';
   
   //  API_KEY 
-const  API_KEY = "";
+const  API_KEY = config.WEATHER_API_KEY;
 const ex_url =`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&base_date=20210628&base_time=0600&nx=55&ny=127`;
   console.log(ex_url);
 
@@ -17,14 +17,10 @@ const ex_url =`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilag
 // let day = today.getDay();  // 요일
 
 
-
-
 // const nx = '60';
 // const ny = '127';
 const nx = '68';
 const ny = '120';
-
-
 
 
 // 요게 오늘 날짜
@@ -71,12 +67,6 @@ let nextHours_2 = nextHours+2;
 let nextHours_3 = nextHours_2+2;
 let nextHours_4 = nextHours_3+2;
 let nextHours_5 = nextHours_4+2;
-
-// let delZeroHours = null;
-// let delZeroHours_2 = null;
-// let delZeroHours_3 = null;
-// let delZeroHours_4 = null;
-// let delZeroHours_5 = null;
 
 if ( nextHours_5 >= 24 ){
     nextHours_5  = nextHours_5 % 24;
@@ -145,35 +135,35 @@ const getWeatherApi = (getWeatherList) => {
 }
 
 
+const todayWeatherFirstSpan = document.querySelector('.today--weather--temper span:nth-child(1)');
+const todayWeatherSecondSpan = document.querySelector('.today--weather--temper span:nth-child(2)');
+const todayWeatherLogo = document.querySelector('.today--weather--logo');
 
+//  
+const nextDayWeatherTemp = document.querySelector('.next--weather span:first-child');
+const nextDayWeatherImage = document.querySelector('.next--weather span:nth-child(3)');
+const nextDayWeatherHours = document.querySelector('.next--weather span:last-child');
+
+const nextDayWeatherTemp2 = document.querySelector('.next--weather--2 span:first-child');
+const nextDayWeatherImage2 = document.querySelector('.next--weather--2 span:nth-child(3)');
+const nextDayWeatherHours2 = document.querySelector('.next--weather--2 span:last-child');
+
+const nextDayWeatherTemp3 = document.querySelector('.next--weather--3 span:first-child');
+const nextDayWeatherImage3 = document.querySelector('.next--weather--3 span:nth-child(3)');
+const nextDayWeatherHours3 = document.querySelector('.next--weather--3 span:last-child');
+
+const nextDayWeatherTemp4 = document.querySelector('.next--weather--4 span:first-child');
+const nextDayWeatherImage4 = document.querySelector('.next--weather--4 span:nth-child(3)');
+const nextDayWeatherHours4 = document.querySelector('.next--weather--4 span:last-child');
+
+const nextDayWeatherTemp5 = document.querySelector('.next--weather--5 span:first-child');
+const nextDayWeatherImage5 = document.querySelector('.next--weather--5 span:nth-child(3)');
+const nextDayWeatherHours5 = document.querySelector('.next--weather--5 span:last-child');
 
 
 const getWeatherList = (weatherList) =>{
     
-    const todayWeatherFirstSpan = document.querySelector('.today--weather--temper span:nth-child(1)');
-    const todayWeatherSecondSpan = document.querySelector('.today--weather--temper span:nth-child(2)');
-    const todayWeatherLogo = document.querySelector('.today--weather--logo');
-
-    //  
-    const nextDayWeatherTemp = document.querySelector('.next--weather span:first-child');
-    const nextDayWeatherImage = document.querySelector('.next--weather span > img');
-    const nextDayWeatherHours = document.querySelector('.next--weather span:last-child');
-
-    const nextDayWeatherTemp2 = document.querySelector('.next--weather--2 span:first-child');
-    const nextDayWeatherImage2 = document.querySelector('.next--weather--2 span > img');
-    const nextDayWeatherHours2 = document.querySelector('.next--weather--2 span:last-child');
-
-    const nextDayWeatherTemp3 = document.querySelector('.next--weather--3 span:first-child');
-    const nextDayWeatherImage3 = document.querySelector('.next--weather--3 span > img');
-    const nextDayWeatherHours3 = document.querySelector('.next--weather--3 span:last-child');
-
-    const nextDayWeatherTemp4 = document.querySelector('.next--weather--4 span:first-child');
-    const nextDayWeatherImage4 = document.querySelector('.next--weather--4 span > img');
-    const nextDayWeatherHours4 = document.querySelector('.next--weather--4 span:last-child');
-
-    const nextDayWeatherTemp5 = document.querySelector('.next--weather--5 span:first-child');
-    const nextDayWeatherImage5 = document.querySelector('.next--weather--5 span > img');
-    const nextDayWeatherHours5 = document.querySelector('.next--weather--5 span:last-child');
+   
 
 
     function getValuesForFcstTime(fcstTime) {
@@ -203,99 +193,111 @@ const getWeatherList = (weatherList) =>{
     console.log(`SKY value at ${nowFcstTime}: ${values.skyValue}`);
     console.log(`PTY value at ${nowFcstTime}: ${values.ptyValue}`);
 
-
-
-    if(Number(values.skyValue) === 1){
-        todayWeatherSecondSpan.textContent = '맑음';
-
-        if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--밤--맑음');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--밤--비--맑음');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--밤--눈비--맑음');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--밤--눈--맑음');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--밤--소나기--맑음');
-            }
-        }else{ // 낮
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--낮--맑음');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--낮--비--맑음');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--낮--눈비--맑음');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--낮--눈--맑음');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--낮--소나기--맑음');
-            }
-        }
-
-    }else if(Number(values.skyValue) === 3){
-        todayWeatherSecondSpan.textContent = '구름 많음';
-        if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--밤--구름많음');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--밤--비--구름많음');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--밤--눈비--구름많음');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--밤--눈--구름많음');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--밤--소나기--구름많음');
-            }
-        }else{ // 낮
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--낮--구름많음');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--낮--비--구름많음');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--낮--눈비--구름많음');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--낮--눈--구름많음');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--낮--소나기--구름많음');
-            }
-        }
-    }else if( Number(values.skyValue) === 4){
-        todayWeatherSecondSpan.textContent = '흐림';
-        if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--밤--흐림');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--밤--비--흐림');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--밤--눈비--흐림');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--밤--눈--흐림');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--밤--소나기--흐림');
-            }
-        }else{ // 낮
-            if( Number(values.ptyValue) === 0 ){
-                todayWeatherLogo.classList.add('weather-icon--낮--흐림');
-            }else if( Number(values.ptyValue) === 1){ // 비
-                todayWeatherLogo.classList.add('weather-icon--낮--비--흐림');
-            }else if( Number(values.ptyValue) === 2){ //눈/비
-                todayWeatherLogo.classList.add('weather-icon--낮--눈비--흐림');
-            }else if( Number(values.ptyValue) === 3){ // 눈
-                todayWeatherLogo.classList.add('weather-icon--낮--눈--흐림');
-            }else if( Number(values.ptyValue) === 4){ //소나기
-                todayWeatherLogo.classList.add('weather-icon--낮--소나기--흐림');
-            }
-        }
-    }
-    todayWeatherFirstSpan.textContent =  `${values.tmpValue}°`;
-
     const nextWeather = getValuesForFcstTime(nextHours);
     const nextWeather2 = getValuesForFcstTime(nextHours_2);
     const nextWeather3 = getValuesForFcstTime(nextHours_3);
     const nextWeather4 = getValuesForFcstTime(nextHours_4);
     const nextWeather5 = getValuesForFcstTime(nextHours_5);
+   
+    // addClassListWeatherIcon(시간, 값, 클래스네임이미지, 클래스네임tmep );
+    addClassListWeatherIcon(nowFcstTime, values, todayWeatherLogo);
+
+    addClassListWeatherIcon(nextHours, nextWeather, nextDayWeatherImage);
+    addClassListWeatherIcon(nextHours_2, nextWeather2, nextDayWeatherImage2);
+    addClassListWeatherIcon(nextHours_3, nextWeather3, nextDayWeatherImage3);
+    addClassListWeatherIcon(nextHours_4, nextWeather4, nextDayWeatherImage4);
+    addClassListWeatherIcon(nextHours_5, nextWeather5, nextDayWeatherImage5);
+
+
+
+
+
+    // if(Number(values.skyValue) === 1){
+    //     todayWeatherSecondSpan.textContent = '맑음';
+
+    //     if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--밤--맑음');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--비--맑음');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈비--맑음');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈--맑음');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--밤--소나기--맑음');
+    //         }
+    //     }else{ // 낮
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--낮--맑음');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--비--맑음');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈비--맑음');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈--맑음');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--낮--소나기--맑음');
+    //         }
+    //     }
+
+    // }else if(Number(values.skyValue) === 3){
+    //     todayWeatherSecondSpan.textContent = '구름 많음';
+    //     if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--밤--구름많음');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--비--구름많음');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈비--구름많음');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈--구름많음');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--밤--소나기--구름많음');
+    //         }
+    //     }else{ // 낮
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--낮--구름많음');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--비--구름많음');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈비--구름많음');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈--구름많음');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--낮--소나기--구름많음');
+    //         }
+    //     }
+    // }else if( Number(values.skyValue) === 4){
+    //     todayWeatherSecondSpan.textContent = '흐림';
+    //     if(  19 < nowFcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--밤--흐림');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--비--흐림');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈비--흐림');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--밤--눈--흐림');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--밤--소나기--흐림');
+    //         }
+    //     }else{ // 낮
+    //         if( Number(values.ptyValue) === 0 ){
+    //             todayWeatherLogo.classList.add('weather-icon--낮--흐림');
+    //         }else if( Number(values.ptyValue) === 1){ // 비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--비--흐림');
+    //         }else if( Number(values.ptyValue) === 2){ //눈/비
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈비--흐림');
+    //         }else if( Number(values.ptyValue) === 3){ // 눈
+    //             todayWeatherLogo.classList.add('weather-icon--낮--눈--흐림');
+    //         }else if( Number(values.ptyValue) === 4){ //소나기
+    //             todayWeatherLogo.classList.add('weather-icon--낮--소나기--흐림');
+    //         }
+    //     }
+    // }
+    todayWeatherFirstSpan.textContent =  `${values.tmpValue}°`;
+
 
     console.log(nextWeather,nextWeather2,nextWeather3,nextWeather4,nextWeather5);
       
@@ -330,3 +332,100 @@ getWeatherApi(getWeatherList);
 // 하늘상태 (SKY) 코드 : 맑음(1), 구름많음(3), 흐림(4)
 
 
+
+const addClassListWeatherIcon = (fcstTime, values, className) =>{
+    // console.log( time, values, className);
+
+    if(Number(values.skyValue) === 1){
+        if( className === todayWeatherLogo){
+            todayWeatherSecondSpan.textContent = '맑음';
+        }
+
+        if(  19 < fcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--밤--맑음');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--밤--비--맑음');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--밤--눈비--맑음');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--밤--눈--맑음');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--밤--소나기--맑음');
+            }
+        }else{ // 낮
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--낮--맑음');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--낮--비--맑음');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--낮--눈비--맑음');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--낮--눈--맑음');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--낮--소나기--맑음');
+            }
+        }
+
+    }else if(Number(values.skyValue) === 3){
+        if( className === todayWeatherLogo){
+            todayWeatherSecondSpan.textContent = '구름 많음';
+        }
+
+        if(  19 < fcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--밤--구름많음');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--밤--비--구름많음');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--밤--눈비--구름많음');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--밤--눈--구름많음');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--밤--소나기--구름많음');
+            }
+        }else{ // 낮
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--낮--구름많음');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--낮--비--구름많음');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--낮--눈비--구름많음');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--낮--눈--구름많음');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--낮--소나기--구름많음');
+            }
+        }
+    }else if( Number(values.skyValue) === 4){
+        if( className === todayWeatherLogo){
+            todayWeatherSecondSpan.textContent = '흐림';
+        }
+       
+        if(  19 < fcstTime.slice(0,-2) ) { // 20시 부터 저녁 icon을 보여주기 위함
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--밤--흐림');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--밤--비--흐림');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--밤--눈비--흐림');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--밤--눈--흐림');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--밤--소나기--흐림');
+            }
+        }else{ // 낮
+            if( Number(values.ptyValue) === 0 ){
+                className.classList.add('weather-icon--낮--흐림');
+            }else if( Number(values.ptyValue) === 1){ // 비
+                className.classList.add('weather-icon--낮--비--흐림');
+            }else if( Number(values.ptyValue) === 2){ //눈/비
+                className.classList.add('weather-icon--낮--눈비--흐림');
+            }else if( Number(values.ptyValue) === 3){ // 눈
+                className.classList.add('weather-icon--낮--눈--흐림');
+            }else if( Number(values.ptyValue) === 4){ //소나기
+                className.classList.add('weather-icon--낮--소나기--흐림');
+            }
+        }
+    }
+}
