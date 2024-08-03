@@ -10,9 +10,7 @@ const ex_url =`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilag
 //  초단기 예보조회 :    http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst
 //  단기예보 하루치를 다 알려주는듯합니다 :  http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst
 
-// http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst
-// ?serviceKey=인증키&numOfRows=10&pageNo=1
-// &base_date=20210628&base_time=0500&nx=55&ny=127
+
 // let year = today.getFullYear(); // 년도
 // let day = today.getDay();  // 요일
 
