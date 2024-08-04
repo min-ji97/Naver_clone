@@ -242,6 +242,59 @@
 }
 
 
+.weather--daily--right ul {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 18px 24px;
+    width: 180px;
+    height: 145px;
+    padding: 0px;
+}
+.weather--daily--right [class*="next--weather"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.weather--daily--right [class*="next--weather"] span:first-child{
+    /* color: red; */
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.weather--daily--right [class*="next--weather"] span:last-child{
+    color: #606060;
+    font-size: 13px;
+    text-align: center;
+    /* margin-top: 30px; */
+}
+
+.weather--daily--right .next--weather span:last-child{
+    color: #101010;
+    font-weight: bold;
+    
+    
+}
+
+.bar{
+
+    width: 1px;
+    height: 26px;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* main-right--stock */
 #main-right--stock{
   

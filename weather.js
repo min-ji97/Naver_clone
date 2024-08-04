@@ -300,10 +300,11 @@ const getWeatherList = (weatherList) =>{
     console.log(nextWeather,nextWeather2,nextWeather3,nextWeather4,nextWeather5);
       
 
+    getGraphBar(nextWeather.tmpValue,nextWeather2.tmpValue,nextWeather3.tmpValue,nextWeather4.tmpValue,nextWeather5.tmpValue);
 
     nextDayWeatherTemp.textContent = `${nextWeather.tmpValue}°`;
     nextDayWeatherImage.textContent = ``;
-    nextDayWeatherHours.textContent = delZeroHours;
+    nextDayWeatherHours.textContent = `${delZeroHours}시`;
 
     nextDayWeatherTemp2.textContent = `${nextWeather2.tmpValue}°`;
     nextDayWeatherImage2.textContent = ``;
@@ -427,3 +428,119 @@ const addClassListWeatherIcon = (fcstTime, values, className) =>{
         }
     }
 }
+
+
+
+
+
+
+const bar = document.querySelector(".bar");
+
+const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
+//tmpValue값만 쓸꺼임
+    const arr = new Array(tmp1, tmp2, tmp3, tmp4, tmp5);
+    // console.log(tmp1,tmp2,tmp3,tmp4, tmp5 )
+    console.log(arr);
+
+    /*
+    
+   
+    
+    
+    */
+
+
+}
+
+
+// const ctx = document.querySelector(".weather--daily--right ul");
+// const ctx = document.getElementById("myChart");
+
+// const mixedChart = new Chart(ctx, {
+//     data: {
+//         datasets: [{
+//             type: 'bar',
+//             // label: 'Bar Dataset',
+//             data: [26, 26, 27, 29]
+//         }, {
+//             type: 'line',
+//             // label: 'Line Dataset',
+//             data: [26, 26, 27, 29],
+//         }],
+//         labels: ['January', 'February', 'March', 'April'],
+//         datasets: [ // 데이터의 속성
+//             {
+//               label: 'Dataset', // 축의 제목
+//               fill: false, // line 형태일 때, 선 안쪽을 채우는지 여부
+//               data: [10,20,30,40], // dataset 값
+//               backgroundColor: '#00C7E2', // dataset 배경색
+//               borderColor: 'white', // dataset 테두리 색상
+//               borderWidth: 2, // dataset 테두리 두께
+//               maxBarThickness: 30 // 최대 bar의 두께 설정
+//             }
+//           ]
+//     },
+//     options: options
+// });
+ 
+
+// var context = document
+//                 .getElementById('myChart')
+//                 .getContext('2d');
+//             var myChart = new Chart(context, {
+//                 type: 'bar', // 차트의 형태
+//                 data: { // 차트에 들어갈 데이터
+//                     labels: [
+//                         //x 축
+//                         '1','2','3','4','5','6','7'
+//                     ],
+//                     datasets: [
+//                         { //데이터
+//                             // label: 'test1', //차트 제목
+//                             fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+//                             data: [
+//                                 21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+//                             ],
+//                             backgroundColor: [
+//                                 //색상
+//                                 'rgba(255, 99, 132, 0.2)',
+//                                 'rgba(54, 162, 235, 0.2)',
+//                                 'rgba(255, 206, 86, 0.2)',
+//                                 'rgba(75, 192, 192, 0.2)',
+//                                 'rgba(153, 102, 255, 0.2)',
+//                                 'rgba(255, 159, 64, 0.2)'
+//                             ],
+//                             borderColor: [
+//                                 //경계선 색상
+//                                 'rgba(255, 99, 132, 1)',
+//                                 'rgba(54, 162, 235, 1)',
+//                                 'rgba(255, 206, 86, 1)',
+//                                 'rgba(75, 192, 192, 1)',
+//                                 'rgba(153, 102, 255, 1)',
+//                                 'rgba(255, 159, 64, 1)'
+//                             ],
+//                             borderWidth: 1 //경계선 굵기
+//                         }/* ,
+//                         {
+//                             label: 'test2',
+//                             fill: false,
+//                             data: [
+//                                 8, 34, 12, 24
+//                             ],
+//                             backgroundColor: 'rgb(157, 109, 12)',
+//                             borderColor: 'rgb(157, 109, 12)'
+//                         } */
+//                     ]
+//                 },
+//                 options: {
+//                     scales: {
+//                         yAxes: [
+//                             {
+//                                 ticks: {
+//                                     beginAtZero: true
+//                                 }
+//                             }
+//                         ]
+//                     }
+//                 }
+//             });

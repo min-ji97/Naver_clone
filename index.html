@@ -17,6 +17,8 @@
 </head>
 <body>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script defer src="index.js"></script>
     <script defer type="module" src="weather.js"></script>
 
@@ -809,35 +811,38 @@
                                 <span class="color--blue">좋음</span>
                             </div>
                         </div>
+                        <!-- <canvas id="myChart" width="300" height="100"></canvas> -->
+
+
                         <div class="weather--daily--right">
                             <ul>
                                 <li class="next--weather">
                                     <span></span>
-                                    <span>ㅣ</span>
+                                    <span class="bar"></span>
                                     <span class="dde"></span>
                                     <span></span>
                                 </li>
                                 <li class="next--weather--2">
                                     <span></span>
-                                    <span>ㅣ</span>
+                                    <span  class="bar"></span>
                                     <span class="dd"><img src="" alt=""></span>
                                     <span></span>
                                 </li>
                                 <li class="next--weather--3">
                                     <span></span>
-                                    <span></span>
+                                    <span  class="bar">  </span>
                                     <span><img src="" alt=""></span>
                                     <span></span>
                                 </li>
                                 <li class="next--weather--4">
                                     <span></span>
-                                    <span>ㅣ</span>
+                                    <span  class="bar"></span>
                                     <span><img src="" alt=""></span>
                                     <span></span>
                                 </li>
                                 <li class="next--weather--5">
                                     <span></span>
-                                    <span>ㅣ</span>
+                                    <span  class="bar"></span>
                                     <span><img src="" alt=""></span>
                                     <span></span>
                                 </li>
