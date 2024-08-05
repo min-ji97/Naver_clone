@@ -459,23 +459,42 @@ const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
 
     const barList = [];
 
-    let x = -15;
+
+    let x = 0;
+
     temperArray.forEach( (temp , index ) =>{
         const barHeight = getBarHeight(temp);
-        console.log('몇번째? => ',index, '온도는? =>',temp, '바의 길이는?! = >',barHeight);
+        
 
         const bar = document.querySelector(`.next--weather--${index+1} .bar`);
         bar.style.height= `${barHeight}px`;
-        
-        x += 15;
-        let y = bar.offsetTop;
-        barList.push({ x , y });
-        console.log( '바의 오프셋탑',bar.offsetTop ,'바의 오프셋 하이트'  ,bar.offsetHeight, );
-        // 바의 길이 === 오프셋하이트 같음! 
-        // offsetTop이 Y의 위치..? 일단 y값을 이걸로 줘보자!
-        
-    })
 
+        console.log('몇번째? => ',index, '온도는? =>',temp, '바의 길이는?! = >',barHeight ,'offsetTop은? =>', bar.offsetTop);
+        // let y = bar.offsetTop ;
+        let y = 47 - barHeight + 37;
+// 132(부모 요소) - lineHeight(bar길이 ) -35 
+        if( index === 0){
+           
+            if(index === 0 ){
+                barList.unshift({ x ,  y} );
+            }
+            x += 15;
+
+        }else{
+            x += 31;
+        }
+        
+        barList.push({ x , y });
+
+        if(index === 4){
+            x += 17;
+            barList.push({ x , y });
+        }
+        
+    });
+
+    
+    // barList.push( x , x );
     drawGraph(barList);
     console.log(barList);
 
@@ -510,7 +529,24 @@ const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
 
 }
 
+const canvas = document.getElementById('lineChart');
+
 const drawGraph = (listXY) =>{
     console.log(listXY);
 
+    if(canvas.getContext){
+        listXY.forEach((value, index)=>{
+            const ctx = canvas.getContext("2d");
+            
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.moveTo(value.x, value.y);
+            if (index < listXY.length - 1) {
+                const nextValue = listXY[index + 1];
+                ctx.lineTo(nextValue.x, nextValue.y);
+            }
+            ctx.strokeStyle ='#e3e5e8';
+            ctx.stroke();
+        })
+    }
 }
