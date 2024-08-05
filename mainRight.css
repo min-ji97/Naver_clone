@@ -240,14 +240,22 @@
    width: 3px;
    height: 3px;
 }
+.weather--daily--right{
+    margin: 20px 0px 18px 24px;
+    width: 180px;
+    height: 145px;
+    position: relative;
+}
+    
 
 
 .weather--daily--right ul {
     display: flex;
     flex-direction: row;
-    margin: 20px 0px 18px 24px;
+    /* margin: 20px 0px 18px 24px;
     width: 180px;
-    height: 145px;
+    height: 145px; */
+    box-sizing: border-box;
     padding: 0px;
 }
 .weather--daily--right [class*="next--weather"] {
@@ -255,10 +263,11 @@
     flex-direction: column;
     justify-content: end;
 }
-.weather--daily--right [class*="next--weather"] span:first-child{
-    /* color: red; */
+/* 기온 알려줌 */
+.weather--daily--right [class*="next--weather"] span:first-child{ 
+    text-align: center;
     font-size: 14px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .weather--daily--right [class*="next--weather"] span:last-child{
@@ -271,21 +280,35 @@
 .weather--daily--right .next--weather span:last-child{
     color: #101010;
     font-weight: bold;
-    
-    
+
 }
 
-.bar{
 
+/* .bar{
+    position: relative;
+}
+.bar::before{
+    position: absolute;
+    content: '';
+    display: block;
     width: 1px;
-    height: 26px;
-    background-color: red;
+    background-color: #ebebeb;
+    margin: 10px 0px 10px;
+} */
+.bar{
+    display: block;
+    width: 1px;
+    background-color: #ebebeb;
+    /* margin: 10px 0px 10px; */
+    /* 꺽은선 그래프 색 #e3e5e8 */
+    margin: 15px 0px 7px 15px;
 }
 
-
-
-
-
+#lineChart{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 

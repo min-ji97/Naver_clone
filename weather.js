@@ -51,17 +51,16 @@ let month = ("0"+( today.getMonth() + 1) ).slice(-2);  // 월
 let date = ( "0" + today.getDate()).slice(-2);  // 날짜
 
 const baseDate=year+month+date;
-console.log(year+month+date);
 
 let hours = ("0" + today.getHours()).slice(-2); // 현재시간
 const nowFcstTime = hours+"00";
 
-console.log(hours+"00");
 
 
 
-let nextHours = today.getHours()+1;
-let nextHours_2 = nextHours+2;
+
+let nextHours_1 = today.getHours()+1;
+let nextHours_2 = nextHours_1+2;
 let nextHours_3 = nextHours_2+2;
 let nextHours_4 = nextHours_3+2;
 let nextHours_5 = nextHours_4+2;
@@ -79,24 +78,24 @@ if( nextHours_3 >= 24){
 if( nextHours_2 >= 24){
     nextHours_2 = nextHours_2 % 24;
 }
-if( nextHours >= 24){
-    nextHours = nextHours % 24;
+if( nextHours_1 >= 24){
+    nextHours_1 = nextHours_1 % 24;
 }
 
-let delZeroHours = nextHours;
+let delZeroHours_1 = nextHours_1;
 let delZeroHours_2 = nextHours_2;
 let delZeroHours_3 = nextHours_3;
 let delZeroHours_4 = nextHours_4;
 let delZeroHours_5 = nextHours_5;
 
-nextHours = ( "0"+ nextHours).slice(-2)+"00";
+nextHours_1 = ( "0"+ nextHours_1).slice(-2)+"00";
 nextHours_2 = ("0" + nextHours_2).slice(-2)+"00";
 nextHours_3 = ("0" + nextHours_3).slice(-2)+"00";
 nextHours_4 = ("0" + nextHours_4).slice(-2)+"00";
 nextHours_5 = ("0" + nextHours_5).slice(-2)+"00";
 
 
-console.log(nextHours, nextHours_2, nextHours_3,nextHours_4, nextHours_5);
+console.log(nextHours_1, nextHours_2, nextHours_3,nextHours_4, nextHours_5);
 
 
 const getWeatherApi = (getWeatherList) => {
@@ -133,29 +132,29 @@ const getWeatherApi = (getWeatherList) => {
 }
 
 
-const todayWeatherFirstSpan = document.querySelector('.today--weather--temper span:nth-child(1)');
-const todayWeatherSecondSpan = document.querySelector('.today--weather--temper span:nth-child(2)');
+const todayWeatherFirstSpan = document.querySelector('.today--weather--temper span:nth-of-type(1)');
+const todayWeatherSecondSpan = document.querySelector('.today--weather--temper span:nth-of-type(2)');
 const todayWeatherLogo = document.querySelector('.today--weather--logo');
 
 //  
-const nextDayWeatherTemp = document.querySelector('.next--weather span:first-child');
-const nextDayWeatherImage = document.querySelector('.next--weather span:nth-child(3)');
-const nextDayWeatherHours = document.querySelector('.next--weather span:last-child');
+const nextDayWeatherTemp1 = document.querySelector('.next--weather--1 span:first-child');
+const nextDayWeatherImage1 = document.querySelector('.next--weather--1 span:nth-of-type(3)');
+const nextDayWeatherHours1 = document.querySelector('.next--weather--1 span:last-child');
 
 const nextDayWeatherTemp2 = document.querySelector('.next--weather--2 span:first-child');
-const nextDayWeatherImage2 = document.querySelector('.next--weather--2 span:nth-child(3)');
+const nextDayWeatherImage2 = document.querySelector('.next--weather--2 span:nth-of-type(3)');
 const nextDayWeatherHours2 = document.querySelector('.next--weather--2 span:last-child');
 
 const nextDayWeatherTemp3 = document.querySelector('.next--weather--3 span:first-child');
-const nextDayWeatherImage3 = document.querySelector('.next--weather--3 span:nth-child(3)');
+const nextDayWeatherImage3 = document.querySelector('.next--weather--3 span:nth-of-type(3)');
 const nextDayWeatherHours3 = document.querySelector('.next--weather--3 span:last-child');
 
 const nextDayWeatherTemp4 = document.querySelector('.next--weather--4 span:first-child');
-const nextDayWeatherImage4 = document.querySelector('.next--weather--4 span:nth-child(3)');
+const nextDayWeatherImage4 = document.querySelector('.next--weather--4 span:nth-of-type(3)');
 const nextDayWeatherHours4 = document.querySelector('.next--weather--4 span:last-child');
 
 const nextDayWeatherTemp5 = document.querySelector('.next--weather--5 span:first-child');
-const nextDayWeatherImage5 = document.querySelector('.next--weather--5 span:nth-child(3)');
+const nextDayWeatherImage5 = document.querySelector('.next--weather--5 span:nth-of-type(3)');
 const nextDayWeatherHours5 = document.querySelector('.next--weather--5 span:last-child');
 
 
@@ -191,7 +190,7 @@ const getWeatherList = (weatherList) =>{
     console.log(`SKY value at ${nowFcstTime}: ${values.skyValue}`);
     console.log(`PTY value at ${nowFcstTime}: ${values.ptyValue}`);
 
-    const nextWeather = getValuesForFcstTime(nextHours);
+    const nextWeather1 = getValuesForFcstTime(nextHours_1);
     const nextWeather2 = getValuesForFcstTime(nextHours_2);
     const nextWeather3 = getValuesForFcstTime(nextHours_3);
     const nextWeather4 = getValuesForFcstTime(nextHours_4);
@@ -200,7 +199,7 @@ const getWeatherList = (weatherList) =>{
     // addClassListWeatherIcon(시간, 값, 클래스네임이미지, 클래스네임tmep );
     addClassListWeatherIcon(nowFcstTime, values, todayWeatherLogo);
 
-    addClassListWeatherIcon(nextHours, nextWeather, nextDayWeatherImage);
+    addClassListWeatherIcon(nextHours_1, nextWeather1, nextDayWeatherImage1);
     addClassListWeatherIcon(nextHours_2, nextWeather2, nextDayWeatherImage2);
     addClassListWeatherIcon(nextHours_3, nextWeather3, nextDayWeatherImage3);
     addClassListWeatherIcon(nextHours_4, nextWeather4, nextDayWeatherImage4);
@@ -297,14 +296,14 @@ const getWeatherList = (weatherList) =>{
     todayWeatherFirstSpan.textContent =  `${values.tmpValue}°`;
 
 
-    console.log(nextWeather,nextWeather2,nextWeather3,nextWeather4,nextWeather5);
+    console.log(nextWeather1,nextWeather2,nextWeather3,nextWeather4,nextWeather5);
       
 
-    getGraphBar(nextWeather.tmpValue,nextWeather2.tmpValue,nextWeather3.tmpValue,nextWeather4.tmpValue,nextWeather5.tmpValue);
+    getGraphBar(nextWeather1.tmpValue,nextWeather2.tmpValue,nextWeather3.tmpValue,nextWeather4.tmpValue,nextWeather5.tmpValue);
 
-    nextDayWeatherTemp.textContent = `${nextWeather.tmpValue}°`;
-    nextDayWeatherImage.textContent = ``;
-    nextDayWeatherHours.textContent = `${delZeroHours}시`;
+    nextDayWeatherTemp1.textContent = `${nextWeather1.tmpValue}°`;
+    nextDayWeatherImage1.textContent = ``;
+    nextDayWeatherHours1.textContent = `${delZeroHours_1}시`;
 
     nextDayWeatherTemp2.textContent = `${nextWeather2.tmpValue}°`;
     nextDayWeatherImage2.textContent = ``;
@@ -434,113 +433,84 @@ const addClassListWeatherIcon = (fcstTime, values, className) =>{
 
 
 
-const bar = document.querySelector(".bar");
+// const bar = document.querySelector(".bar");
+
+
+
 
 const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
 //tmpValue값만 쓸꺼임
-    const arr = new Array(tmp1, tmp2, tmp3, tmp4, tmp5);
+    const temperArray = new Array(tmp1, tmp2, tmp3, tmp4, tmp5);
     // console.log(tmp1,tmp2,tmp3,tmp4, tmp5 )
-    console.log(arr);
+    console.log(temperArray);
+    
+    const minHeight = 7;
+    const maxHeight = 43;
+    
+    const minTemp = Math.min(...temperArray);
+    const maxTemp = Math.max(...temperArray);
+
+    const getBarHeight = (temp) =>{
+        if( minTemp === maxTemp){  // 모든 온도가 동일할 때! 동일한 bar길이로 주기위함 ->  25px
+            return ( maxHeight + minHeight) / 2 ; 
+        }
+        return((temp - minTemp) * (maxHeight - minHeight)) / (maxTemp - minTemp) + minHeight;
+    }
+
+    const barList = [];
+
+    let x = -15;
+    temperArray.forEach( (temp , index ) =>{
+        const barHeight = getBarHeight(temp);
+        console.log('몇번째? => ',index, '온도는? =>',temp, '바의 길이는?! = >',barHeight);
+
+        const bar = document.querySelector(`.next--weather--${index+1} .bar`);
+        bar.style.height= `${barHeight}px`;
+        
+        x += 15;
+        let y = bar.offsetTop;
+        barList.push({ x , y });
+        console.log( '바의 오프셋탑',bar.offsetTop ,'바의 오프셋 하이트'  ,bar.offsetHeight, );
+        // 바의 길이 === 오프셋하이트 같음! 
+        // offsetTop이 Y의 위치..? 일단 y값을 이걸로 줘보자!
+        
+    })
+
+    drawGraph(barList);
+    console.log(barList);
+
+
 
     /*
-    
    
+        네이버 에서는  height 값을
+        34도  31도    28도   25도   25도
+         43px  31       19     7      7 
     
+
+         27도 26도 28도 30도 31도
+        14px 7px  21px  35px  43px 
+
+
+         // 기온을 기준으로 막대 높이 정규화
+        const normalizedHeight = (entry.temp - minTemp) / (maxTemp - minTemp) * maxBarHeight;
+        barSpan.style.height = `${normalizedHeight}px`;
+
+        34도 일떼 -> (34-25) / (31 - 25) * 100  = 9 / 6 *100  = 150px...?
+        
+
+        꺽은선 그래프 
+        -> 32px+ barHeight 값  ==> 이게 그려야할 y축이 될 것!!! (32px은 이미지 / 이미지 크기만큼 빼줘야..?)
+        x축은 0부터 시작..!?! 0 -> 15까지 찍고, 다음 점은 16+15= 31 만큼그리고, 
+        마지막은 y값은 그대로, x값만 + 15 해서 그려주기
+
     
     */
 
 
 }
 
+const drawGraph = (listXY) =>{
+    console.log(listXY);
 
-// const ctx = document.querySelector(".weather--daily--right ul");
-// const ctx = document.getElementById("myChart");
-
-// const mixedChart = new Chart(ctx, {
-//     data: {
-//         datasets: [{
-//             type: 'bar',
-//             // label: 'Bar Dataset',
-//             data: [26, 26, 27, 29]
-//         }, {
-//             type: 'line',
-//             // label: 'Line Dataset',
-//             data: [26, 26, 27, 29],
-//         }],
-//         labels: ['January', 'February', 'March', 'April'],
-//         datasets: [ // 데이터의 속성
-//             {
-//               label: 'Dataset', // 축의 제목
-//               fill: false, // line 형태일 때, 선 안쪽을 채우는지 여부
-//               data: [10,20,30,40], // dataset 값
-//               backgroundColor: '#00C7E2', // dataset 배경색
-//               borderColor: 'white', // dataset 테두리 색상
-//               borderWidth: 2, // dataset 테두리 두께
-//               maxBarThickness: 30 // 최대 bar의 두께 설정
-//             }
-//           ]
-//     },
-//     options: options
-// });
- 
-
-// var context = document
-//                 .getElementById('myChart')
-//                 .getContext('2d');
-//             var myChart = new Chart(context, {
-//                 type: 'bar', // 차트의 형태
-//                 data: { // 차트에 들어갈 데이터
-//                     labels: [
-//                         //x 축
-//                         '1','2','3','4','5','6','7'
-//                     ],
-//                     datasets: [
-//                         { //데이터
-//                             // label: 'test1', //차트 제목
-//                             fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-//                             data: [
-//                                 21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
-//                             ],
-//                             backgroundColor: [
-//                                 //색상
-//                                 'rgba(255, 99, 132, 0.2)',
-//                                 'rgba(54, 162, 235, 0.2)',
-//                                 'rgba(255, 206, 86, 0.2)',
-//                                 'rgba(75, 192, 192, 0.2)',
-//                                 'rgba(153, 102, 255, 0.2)',
-//                                 'rgba(255, 159, 64, 0.2)'
-//                             ],
-//                             borderColor: [
-//                                 //경계선 색상
-//                                 'rgba(255, 99, 132, 1)',
-//                                 'rgba(54, 162, 235, 1)',
-//                                 'rgba(255, 206, 86, 1)',
-//                                 'rgba(75, 192, 192, 1)',
-//                                 'rgba(153, 102, 255, 1)',
-//                                 'rgba(255, 159, 64, 1)'
-//                             ],
-//                             borderWidth: 1 //경계선 굵기
-//                         }/* ,
-//                         {
-//                             label: 'test2',
-//                             fill: false,
-//                             data: [
-//                                 8, 34, 12, 24
-//                             ],
-//                             backgroundColor: 'rgb(157, 109, 12)',
-//                             borderColor: 'rgb(157, 109, 12)'
-//                         } */
-//                     ]
-//                 },
-//                 options: {
-//                     scales: {
-//                         yAxes: [
-//                             {
-//                                 ticks: {
-//                                     beginAtZero: true
-//                                 }
-//                             }
-//                         ]
-//                     }
-//                 }
-//             });
+}
