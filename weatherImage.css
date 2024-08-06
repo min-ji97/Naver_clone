@@ -4,115 +4,226 @@
     background-image: url(img/sp_weather.11654bc0.png);
     background-size: 641px 587px;
 }
-.weather--daily--right [class*='next--weather'] span:nth-child(3){
-    background-image: url(img/sp_weather.11654bc0.png);
-    background-size: 100px 100px;
-}
 
 /* .weather--daily--container [class *='.weather-icon--']{
     background-image: url(img/sp_weather.11654bc0.png);
     background-size: 641px 587px;
 } */
 
-.weather-icon--낮--맑음{
+.weather--detail--box .weather-icon--낮--맑음{
     background-position: 0px 0px;
 }
-.weather-icon--낮--구름많음{
+.weather--detail--box .weather-icon--낮--구름많음{
     background-position: -172px 0px;
 }
-.weather-icon--낮--흐림{
+.weather--detail--box .weather-icon--낮--흐림{
     background-position: 0px -178px;
 }
     /*  */
-.weather-icon--낮--비--맑음{
+    .weather--detail--box .weather-icon--낮--비--맑음{
     background-position: -91px -351px;
 }
-.weather-icon--낮--비--구름많음{
+.weather--detail--box .weather-icon--낮--비--구름많음{
     background-position: 208px -262px;
 }
-.weather-icon--낮--비--흐림{
+.weather--detail--box .weather-icon--낮--비--흐림{
     background-position: -173px -175px;
 }
 /* 눈비 구름 많음과 흐림은 못찾아서 다 통일해줌! */
-.weather-icon--낮--눈비--맑음{
+.weather--detail--box .weather-icon--낮--눈비--맑음{
     background-position: -263px -352px;
 }
-.weather-icon--낮--눈비--구름많음{
+.weather--detail--box .weather-icon--낮--눈비--구름많음{
     background-position: -263px -352px;
 }
-.weather-icon--낮--눈비--흐림{
+.weather--detail--box .weather-icon--낮--눈비--흐림{
     background-position: -263px -352px;
 }
 /*  */
-.weather-icon--낮--눈--맑음{
+.weather--detail--box .weather-icon--낮--눈--맑음{
     background-position: 206px -179px;
 }
-.weather-icon--낮--눈--구름많음{
+.weather--detail--box .weather-icon--낮--눈--구름많음{
     background-position: 208px -350px;
 }
-.weather-icon--낮--눈--흐림{
+.weather--detail--box .weather-icon--낮--눈--흐림{
     background-position:0 -260px;
 }
 /*  */
-.weather-icon--낮--소나기--맑음{
+.weather--detail--box .weather-icon--낮--소나기--맑음{
     background-position: 205px -84px;
 }
-.weather-icon--낮--소나기--구름많음{
+.weather--detail--box .weather-icon--낮--소나기--구름많음{
     background-position: -176px -258px;
 }
-.weather-icon--낮--소나기--흐림{
+.weather--detail--box .weather-icon--낮--소나기--흐림{
     background-position: -257px 0px;
 }
 
 
 
 /* ---------------------------- */
-.weather-icon--밤--맑음{
+.weather--detail--box .weather-icon--밤--맑음{
     background-position: -83px 0px;
 }
-.weather-icon--밤--구름많음{
+.weather--detail--box .weather-icon--밤--구름많음{
     background-position: -173px -88px;
 }
-.weather-icon--밤--흐림{
+.weather--detail--box .weather-icon--밤--흐림{
     background-position: 0px -178px;
 }
 /*  */
-.weather-icon--밤--비--맑음{
+.weather--detail--box .weather-icon--밤--비--맑음{
     background-position: 0px -438px;
 }
-.weather-icon--밤--비--구름많음{
+.weather--detail--box .weather-icon--밤--비--구름많음{
     background-position: 117px -85px;
 }
-.weather-icon--밤--비--흐림{
+.weather--detail--box .weather-icon--밤--비--흐림{
     background-position: -173px -175px;
 }
 /*  */
-.weather-icon--밤--눈비--맑음{
+.weather--detail--box .weather-icon--밤--눈비--맑음{
     background-position: -173px -438px;
 }
-.weather-icon--밤--눈비--구름많음{
+.weather--detail--box .weather-icon--밤--눈비--구름많음{
     background-position:-173px -438px;
 }
-.weather-icon--밤--눈비--흐림{
+.weather--detail--box .weather-icon--밤--눈비--흐림{
     background-position: -173px -438px;
 }
 /*  */
-.weather-icon--밤--눈--맑음{
+.weather--detail--box .weather-icon--밤--눈--맑음{
     background-position: 117px 0;
 }
-.weather-icon--밤--눈--구름많음{
+.weather--detail--box .weather-icon--밤--눈--구름많음{
     background-position: 117px -175pxx;
 }
-.weather-icon--밤--눈--흐림{
+.weather--detail--box .weather-icon--밤--눈--흐림{
     background-position: 0 -260px;
 }
 /*  */
-.weather-icon--밤--소나기--맑음{
+.weather--detail--box .weather-icon--밤--소나기--맑음{
     background-position: 205px -438px;
 }
-.weather-icon--밤--소나기--구름많음{
+.weather--detail--box .weather-icon--밤--소나기--구름많음{
     background-position: 117px -438px;
 }
-.weather-icon--밤--소나기--흐림{
+.weather--detail--box .weather-icon--밤--소나기--흐림{
     background-position: -257px 0px;
+}
+
+
+/*    .weather--daily--right의 날씨 이미지     */
+
+
+
+
+.weather--daily--right [class*='next--weather'] span:nth-child(3){
+    background-image: url(img/sp_weather.11654bc0.png);
+    background-size: 641px 587px;
+}
+
+
+.weather--daily--right .weather-icon--낮--맑음{
+    background-position: 0px 65px;
+}
+.weather--daily--right .weather-icon--낮--구름많음{
+    background-position: -66px 65px;
+}
+.weather--daily--right .weather-icon--낮--흐림{
+    background-position: -132px 65px;
+}
+    /*  */
+.weather--daily--right .weather-icon--낮--비--맑음{
+    background-position: -100px 33px;
+}
+.weather--daily--right .weather-icon--낮--비--구름많음{
+    background-position: -330px 33px;
+}
+.weather--daily--right .weather-icon--낮--비--흐림{
+    background-position: -263px 65px;
+}
+/* 눈비 구름 많음과 흐림은 못찾아서 다 통일해줌! */
+.weather--daily--right .weather-icon--낮--눈비--맑음{
+    background-position: -166px 33px;
+}
+.weather--daily--right .weather-icon--낮--눈비--구름많음{
+    background-position: -166px 33px;
+}
+.weather--daily--right .weather-icon--낮--눈비--흐림{
+    background-position: -166px 33px;
+}
+/*  */
+.weather--daily--right .weather-icon--낮--눈--맑음{
+    background-position: -133px 33px;
+}
+.weather--daily--right .weather-icon--낮--눈--구름많음{
+    background-position: -363px 33px;
+}
+.weather--daily--right .weather-icon--낮--눈--흐림{
+    background-position: -363px 33px;
+}
+/*  */
+.weather--daily--right .weather-icon--낮--소나기--맑음{
+    background-position: -262px 33px;
+}
+.weather--daily--right .weather-icon--낮--소나기--구름많음{
+    background-position: -461px 65px;
+}
+.weather--daily--right .weather-icon--낮--소나기--흐림{
+    background-position: -296px 65px;
+}
+
+
+
+/* ---------------------------- */
+.weather--daily--right .weather-icon--밤--맑음{
+    background-position: -33px 65px;
+}
+.weather--daily--right .weather-icon--밤--구름많음{
+    background-position:  -100px 65px;
+}
+.weather--daily--right .weather-icon--밤--흐림{
+    background-position:  -164px 65px;
+}
+/*  */
+.weather--daily--right .weather-icon--밤--비--맑음{
+    background-position:  -397px 33px;
+}
+.weather--daily--right .weather-icon--밤--비--구름많음{
+    background-position:  33px -28px;
+}
+.weather--daily--right .weather-icon--밤--비--흐림{
+    background-position:  -263px 65px;
+}
+/*  */
+.weather--daily--right .weather-icon--밤--눈비--맑음{
+    background-position: -461px 33px;
+}
+.weather--daily--right .weather-icon--밤--눈비--구름많음{
+    background-position: -461px 33px;
+}
+.weather--daily--right .weather-icon--밤--눈비--흐림{
+    background-position:  -461px 33px;
+}
+/*  */
+.weather--daily--right .weather-icon--밤--눈--맑음{
+    background-position:  -428px 33px;
+}
+.weather--daily--right .weather-icon--밤--눈--구름많음{
+    background-position:  33px -64px;
+}
+.weather--daily--right .weather-icon--밤--눈--흐림{
+    background-position:  33px -64px;
+}
+/*  */
+.weather--daily--right .weather-icon--밤--소나기--맑음{
+    background-position: -560px 33px;
+}
+.weather--daily--right .weather-icon--밤--소나기--구름많음{
+    background-position:  33px -163px;
+}
+.weather--daily--right .weather-icon--밤--소나기--흐림{
+    background-position: -296px 65px;
 }

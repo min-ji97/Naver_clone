@@ -215,6 +215,7 @@
 .weather--detail--box{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .today--weather--temper{
     display: flex;
@@ -222,20 +223,20 @@
 }
 
 
-.weather--미세{
+.weather--dust{
     font-size: 13px;
     width: 180px;
     height: 20px;
     margin-top: 6px ;
 }
-.weather--미세 span{
+.weather--dust span{
     padding-left: 4px;
 }
-.weather--미세 .dot{
-    padding-left: 12px;
+.weather--dust .dot{
+    padding-left: 16px;
    
 }
-.weather--미세 .dot::before{
+.weather--dust .dot::before{
    left: 4px;
    width: 3px;
    height: 3px;
