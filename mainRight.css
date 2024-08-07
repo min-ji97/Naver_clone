@@ -284,18 +284,6 @@
 
 }
 
-
-/* .bar{
-    position: relative;
-}
-.bar::before{
-    position: absolute;
-    content: '';
-    display: block;
-    width: 1px;
-    background-color: #ebebeb;
-    margin: 10px 0px 10px;
-} */
 .bar{
     display: block;
     width: 1px;
@@ -309,7 +297,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* color: red; */
 }
 
 
@@ -325,11 +312,11 @@
   
 }
 
-#main-right--stock div:first-child span{
+#main-right--stock > div:first-child > span{
     margin-left: 237px;
 }
 
-#main-right--stock div:first-child span::before{
+#main-right--stock > div:first-child > span::before{
     position: relative;
     content: "";
     display: inline-block;
@@ -342,26 +329,243 @@
     right: -90px;
 }
 
-#main-right--stock div:first-child span:hover::before{
+#main-right--stock > div:first-child > span:hover::before{
     background-position: -224px 150px;
+}
+
+
+.stock--daily--container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.display--none{
+    display: none;
 }
 
 
 
 
+.stock--daily--left{
+    width: 160px;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+.stock--daily--left > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    cursor: pointer;
+}
+
+/* stock name  */
+.stock--name{
+    color: #101010;
+}
+.stock--daily--left .stock--name{
+    font-size: 15px;
+}
+/* stock price */
+.stock--daily--left > div span:nth-child(2){
+    font-size: 24px;
+}
+/* stock rate */
+.stock--rate{
+    position: relative;
+    color: #f44336;
+    padding-left: 12px;
+}
+.stock--daily--left .stock--rate{
+    font-size: 14px;
+}
+
+.stock--up--arrow::before,
+.stock--down--arrow::before{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 4px;
+    left: 0px;
+    background-image: url(img/sp_main.74b52318.png);
+    background-size: 443px 424px;
+    width: 12px;
+    height: 10px;
+}
+.stock--up--arrow::before{
+    background-position: -141px 161px;
+}
+.stock--down--arrow::before{
+    background-position: -130px 161px;
+}
+
+
+/* stock img */
+.stock--daily--left .stock--box span:last-child{
+    width: 160px;
+    height: 72px;
+    background-size: cover;
+}
+.stock--daily--left .stock--box:first-child span:last-child{
+    background-image: url(img/stock/다우존스.png);
+}
+.stock--daily--left .stock--box:nth-child(2) span:last-child{
+    background-image: url(img/stock/나스닥.png);
+}
+.stock--daily--left .stock--box:last-child span:last-child{
+    background-image: url(img/stock/다우존스.png);
+}
 
 
 
+.stock--daily--right{
+    /* width: 160px; */
+    width: 175px;
+    margin: 8px 0px 15px 25px;
+}
+
+.stock--daily--right > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6px 0px 9px;
+    border-bottom: 1px solid #ebebeb;
+    cursor: pointer;
+}
+.stock--daily--right > div > div{
+    display: flex;
+    flex-direction: row;
+}
+
+.stock--daily--right .stock--name{
+    font-size: 14px;
+}
+
+.stock--daily--right .stock--rate{
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+.stock--daily--right > div:last-child{
+    padding: 8px 0px 9px;
+}
+.stock--daily--right > div:last-child a{
+    color: #606060;
+    font-size: 14px;
+}
+
+.stock--daily--right > div:last-child{
+  /*  화살표 넣을것임 */
+}
 
 
+.stock--daily--right div:hover a{
+    text-decoration: underline;
+    text-decoration-color: #101010;
+}
+
+.stock--daily--left{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    position: relative;
+}
+.stock--box{
+    width: 160px;
+    height: 159px;
+   position: absolute;
+    /* box-sizing:content-box; */
+    animation: slider 13s infinite forwards;
 
 
+}
+
+@keyframes slider {
+    /* from{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to{
+        transform: translateX(-100%);
+        opacity: 0;
+    } */
+    0% {
+      transform: translateX(0);
+    }
+  
+    26% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    93% {
+      transform: translateX(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
+  .stock--box:first-child{
+    animation-delay: 0;
+  }
+  .stock--box:nth-child(2){
+    animation-delay: -4.3s;
+  }
+  .stock--box:last-child{
+    animation-delay: -8.6s;
+  }
+/* 
+@keyframes slideIn {
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+} */
+/* 
+
+.stock--slideIn{
+    
+    animation: slideIn 3s ease;
+}
+.stock--slideOut{
+
+    animation: slideOut 0.5s ease;
+} */
 
 
-
-
-
-
+/* 
+.display--none{
+    display: none !important;
+}
+.display--block{
+    display: flex !important;
+}
+ */
 
 
 
@@ -606,14 +810,15 @@
     line-height: 23px;
 }
 
-
-.naver--mobile--load > a:last-child{
+.more--arrow{
     display: inline-block;
     background-image: url(img/sp_main.74b52318.png);
     background-size: 443px 424px;
     background-position: -7px 13px;
     width: 10px;
     height: 13px;
+}
+.naver--mobile--load .more--arrow{
     margin-left: 177px;
 }
 
