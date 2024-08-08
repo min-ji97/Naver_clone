@@ -327,6 +327,7 @@
     height: 16px;
     top: 3px;
     right: -90px;
+    cursor: pointer;
 }
 
 #main-right--stock > div:first-child > span:hover::before{
@@ -415,7 +416,7 @@
     background-image: url(img/stock/나스닥.png);
 }
 .stock--daily--left .stock--box:last-child span:last-child{
-    background-image: url(img/stock/다우존스.png);
+    background-image: url(img/stock/환율USD.png);
 }
 
 
@@ -456,11 +457,6 @@
     font-size: 14px;
 }
 
-.stock--daily--right > div:last-child{
-  /*  화살표 넣을것임 */
-}
-
-
 .stock--daily--right div:hover a{
     text-decoration: underline;
     text-decoration-color: #101010;
@@ -475,29 +471,21 @@
 .stock--box{
     width: 160px;
     height: 159px;
-   position: absolute;
+    position: absolute;
     /* box-sizing:content-box; */
+    padding-right: 10px;
     animation: slider 13s infinite forwards;
 
 
 }
 
 @keyframes slider {
-    /* from{
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    to{
-        transform: translateX(-100%);
-        opacity: 0;
-    } */
     0% {
       transform: translateX(0);
     }
   
     26% {
-      transform: translateX(0);
+      transform: translateX(0%);
     }
     33% {
       transform: translateX(-100%);
@@ -517,55 +505,11 @@
     animation-delay: 0;
   }
   .stock--box:nth-child(2){
-    animation-delay: -4.3s;
-  }
-  .stock--box:last-child{
     animation-delay: -8.6s;
   }
-/* 
-@keyframes slideIn {
-    from{
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    from{
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    to{
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-} */
-/* 
-
-.stock--slideIn{
-    
-    animation: slideIn 3s ease;
-}
-.stock--slideOut{
-
-    animation: slideOut 0.5s ease;
-} */
-
-
-/* 
-.display--none{
-    display: none !important;
-}
-.display--block{
-    display: flex !important;
-}
- */
+  .stock--box:last-child{
+    animation-delay: -4.3s;
+  }
 
 
 
@@ -630,7 +574,6 @@
 .calendar--today{
     display: flex;
     font-size: 39px;
-    /* font-weight: bold; */
     color: #101010;
 }
 .calendar--today span:last-child{
@@ -643,6 +586,55 @@
     color: #606060;
     text-decoration: underline;
 }
+
+.widget--calendar--right table td{
+   font-size: 12px;
+   width: 24px;
+   height: 20px;
+   text-align: center;
+}
+
+.widget--calendar--right table td:not(.today--active, .sunday--color, .saturday--color){
+    color: #101010;
+ }
+
+
+.widget--calendar--right table > tr:first-child td{
+    font-weight: bold;
+}
+
+.today--active{
+    position: relative;
+    color: rgb(255, 255, 255);
+    height: 100%;
+  
+}
+.today--active::after{
+    position: absolute;
+    content: attr(data-day);
+    background-color: #101010;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: -2px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sunday--color{
+    color: #eb5b5b;
+}
+.saturday--color{
+    color: #613ee9;
+}
+
+
+
+
+
+
 
 
 

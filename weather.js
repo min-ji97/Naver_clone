@@ -90,12 +90,9 @@ const getWeatherApi = (getWeatherList) => {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
             if (this.status == 200) {
-                console.log('Response:', this.responseText);
                 const parsedResponse = JSON.parse(this.responseText);
-                
                 let weatherList = parsedResponse.response.body.items.item;
-                
-                console.log(weatherList);
+
                 getWeatherList(weatherList);
             
             } else {
@@ -199,10 +196,6 @@ const getWeatherList = (weatherList) =>{
 
 
     todayWeatherFirstSpan.textContent =  `${values.tmpValue}°`;
-
-
-    console.log(nextWeather1,nextWeather2,nextWeather3,nextWeather4,nextWeather5);
-      
 
     getGraphBar(nextWeather1.tmpValue,nextWeather2.tmpValue,nextWeather3.tmpValue,nextWeather4.tmpValue,nextWeather5.tmpValue);
 
@@ -334,15 +327,6 @@ const addClassListWeatherIcon = (fcstTime, values, className) =>{
 }
 
 
-
-
-
-
-// const bar = document.querySelector(".bar");
-
-
-
-
 const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
     //tmpValue값만 쓸꺼임
     const temperArray = new Array(tmp1, tmp2, tmp3, tmp4, tmp5);
@@ -401,7 +385,6 @@ const getGraphBar = (tmp1,tmp2,tmp3, tmp4, tmp5)=>{
 const canvas = document.getElementById('lineChart');
 
 const drawGraph = (listXY) =>{
-    console.log(listXY);
 
     if(canvas.getContext){
         listXY.forEach((value, index)=>{

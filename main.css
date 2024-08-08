@@ -24,15 +24,6 @@ a{
 }
 
 
-
-
-
-
-
-
-
-
-
 /*  */
 #main{
     width: 1280px;
@@ -153,28 +144,6 @@ a{
     padding-left: 26px;
     position: relative;
 }
-/* 
-   slash 와 dot으로 정리했
-.section--title a:nth-child(3),
-.section--title a:nth-child(4),
-.section--title a:nth-child(5),
-.section--title a:nth-child(6){
-    padding-left: 26px;
-    position: relative;
-} */
-/* .section--title a:nth-child(3)::before,
-.section--title a:nth-child(4)::before,
-.section--title a:nth-child(5)::before,
-.section--title a:nth-child(6)::before{
-    content: '';
-    width: 1px;
-    height: 15px;
-    background-color: #d3d5d7;
-    top: 3px;
-    left: 11px;
-    position: absolute;
-    transform: rotate(15deg);
-} */
 
 .section--subCtn{
     display: flex;
