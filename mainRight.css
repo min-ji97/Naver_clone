@@ -1,8 +1,9 @@
 #main-right{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: 420px;
     /* background-color: brown; */
+    height: 2164px;
 }
 
 /* main-right--login */
