@@ -268,7 +268,6 @@ const addClassListWeatherIcon = (fcstTime, values, className) =>{
         }
 
         if(  19 < fcstTime.slice(0,-2) || fcstTime.slice(0,-2) < 5) { // 20시 부터 저녁 icon을 보여주기 위함
-            console.log('뭐야 몇시인데..?',fcstTime.slice(0,-2) < 5 );
             if( Number(values.ptyValue) === 0 ){
                 className.classList.add('weather-icon--밤--구름많음');
             }else if( Number(values.ptyValue) === 1){ // 비
